@@ -416,7 +416,7 @@ function MakeScriptHub()
          
             wait(1.5)
             script.Parent:TweenSize(UDim2.new(1,0,1,0))
-            script.Parent.Parent.Parent.LoadingText.Text = "executing ui"
+            script.Parent.Parent.Parent.LoadingText.Text = "Correct Key Executing Ui.."
             print("[4/4] Correct Key")
                 local sound = Instance.new("Sound")
         sound.SoundId = "rbxassetid://3320590485"
@@ -923,7 +923,7 @@ local function readKey()
          
             wait(1.5)
             script.Parent:TweenSize(UDim2.new(1,0,1,0))
-            script.Parent.Parent.Parent.LoadingText.Text = "executing ui"
+            script.Parent.Parent.Parent.LoadingText.Text = "Executing Key System..."
             print("!!/!!] No Key Founded")
                 local sound = Instance.new("Sound")
         sound.SoundId = "rbxassetid://3320590485"
