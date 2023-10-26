@@ -248,37 +248,6 @@ function MakeScriptHub()
         
             script.Parent:TweenSize(UDim2.new(0, 165,0, 26))
             script.Parent.Parent.Parent.LoadingText.Text = "bypassing anticheat"
-            assert(getrawmetatable)
-            grm = getrawmetatable(game)
-            setreadonly(grm, false)
-            old = grm.__namecall
-            grm.__namecall = newcclosure(function(self, ...)
-                local args = {...}
-                if tostring(args[1]) == "TeleportDetect" then
-                    return
-                elseif tostring(args[1]) == "CHECKER_1" then
-                    return
-                elseif tostring(args[1]) == "CHECKER" then
-                    return
-                elseif tostring(args[1]) == "GUI_CHECK" then
-                    return
-                elseif tostring(args[1]) == "OneMoreTime" then
-                    return
-                elseif tostring(args[1]) == "checkingSPEED" then
-                    return
-                elseif tostring(args[1]) == "BANREMOTE" then
-                    return
-                elseif tostring(args[1]) == "PERMAIDBAN" then
-                    return
-                elseif tostring(args[1]) == "KICKREMOTE" then
-                    return
-                elseif tostring(args[1]) == "BR_KICKPC" then
-                    return
-                elseif tostring(args[1]) == "BR_KICKMOBILE" then
-                    return
-                end
-                return old(self, ...)
-            end)
             print("[2/4] Bypassing Anticheat")
             local sound = Instance.new("Sound")
         sound.SoundId = "rbxassetid://3320590485"
@@ -889,7 +858,6 @@ local function readKey()
         sound.SoundId = "rbxassetid://3320590485"
         sound.Parent = game:GetService("SoundService")
         sound:Play()
-         
             wait(1.5)
             script.Parent:TweenSize(UDim2.new(1,0,1,0))
             script.Parent.Parent.Parent.LoadingText.Text = "Executing Key System..."
