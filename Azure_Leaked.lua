@@ -1020,7 +1020,7 @@ Tab:AddButton({
   	end    
 })
     
-orionLib:Init() 
+OrionLib:Init() 
   end
 end
 if isfolder("/LimitXkey") then
