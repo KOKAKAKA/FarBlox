@@ -3,7 +3,7 @@ function MakeScriptHub()
             wait()
         until game:IsLoaded()
         
-        local FarXLoader = Instance.new("ScreenGui")
+        local LimitXLoader = Instance.new("ScreenGui")
         local BackFrame = Instance.new("Frame")
         local UICorner = Instance.new("UICorner")
         local TopFrame = Instance.new("Frame")
@@ -20,12 +20,12 @@ function MakeScriptHub()
         local UIGradient_4 = Instance.new("UIGradient")
         local UIAspectRatioConstraint = Instance.new("UIAspectRatioConstraint")
         
-        FarXLoader.Name = "FarXLoader"
-        FarXLoader.Parent = game.CoreGui
-        FarXLoader.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+        LimitXLoader.Name = "LimitXLoader"
+        LimitXLoader.Parent = game.CoreGui
+        LimitXLoader.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
         
         BackFrame.Name = "BackFrame"
-        BackFrame.Parent = FarXLoader
+        BackFrame.Parent = LimitXLoader
         BackFrame.AnchorPoint = Vector2.new(0.5, 0.5)
         BackFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
         BackFrame.Position = UDim2.new(0.493000001, 0, 1.07000005, 0)
@@ -52,7 +52,7 @@ function MakeScriptHub()
         TextLabel.Position = UDim2.new(0.387811601, 0, -0.0344827585, 0)
         TextLabel.Size = UDim2.new(0, 87, 0, 29)
         TextLabel.Font = Enum.Font.Code
-        TextLabel.Text = "FarX"
+        TextLabel.Text = "LimitX"
         TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
         TextLabel.TextScaled = true
         TextLabel.TextSize = 14.000
@@ -454,7 +454,7 @@ function MakeScriptHub()
             wait(2)
             goingDownxd:TweenPosition(UDim2.new(0.493, 0,1.07, 0))
             wait(1)
-            script.Parent.Parent.Parent.Parent.Parent.FarXLoader:Destroy()
+            script.Parent.Parent.Parent.Parent.Parent.LimitXLoader:Destroy()
         end
         coroutine.wrap(TFOQWM_fake_script)()
         local function DDIVBK_fake_script()
@@ -468,18 +468,18 @@ function MakeScriptHub()
         loadstring(game:HttpGet(('https://pastebin.com/raw/wPsfrkwN'),true))()
 end
 
-getgenv().Key = "FarX_0k729Hi7Hw72O05J"
+getgenv().Key = "LimitX_0k729Hi7Hw72O05J"
 getgenv().KeyInput = "string"
 
 local function readKey()
-  if readfile("/farxkey/key.txt") == getgenv().Key then
+  if readfile("/LimitXkey/key.txt") == getgenv().Key then
     MakeScriptHub()
     else
           repeat
             wait()
         until game:IsLoaded()
         
-        local FarXLoader = Instance.new("ScreenGui")
+        local LimitXLoader = Instance.new("ScreenGui")
         local BackFrame = Instance.new("Frame")
         local UICorner = Instance.new("UICorner")
         local TopFrame = Instance.new("Frame")
@@ -496,12 +496,12 @@ local function readKey()
         local UIGradient_4 = Instance.new("UIGradient")
         local UIAspectRatioConstraint = Instance.new("UIAspectRatioConstraint")
         
-        FarXLoader.Name = "FarXLoader"
-        FarXLoader.Parent = game.CoreGui
-        FarXLoader.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+        LimitXLoader.Name = "LimitXLoader"
+        LimitXLoader.Parent = game.CoreGui
+        LimitXLoader.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
         
         BackFrame.Name = "BackFrame"
-        BackFrame.Parent = FarXLoader
+        BackFrame.Parent = LimitXLoader
         BackFrame.AnchorPoint = Vector2.new(0.5, 0.5)
         BackFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
         BackFrame.Position = UDim2.new(0.493000001, 0, 1.07000005, 0)
@@ -528,7 +528,7 @@ local function readKey()
         TextLabel.Position = UDim2.new(0.387811601, 0, -0.0344827585, 0)
         TextLabel.Size = UDim2.new(0, 87, 0, 29)
         TextLabel.Font = Enum.Font.Code
-        TextLabel.Text = "FarX"
+        TextLabel.Text = "LimitX"
         TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
         TextLabel.TextScaled = true
         TextLabel.TextSize = 14.000
@@ -929,7 +929,7 @@ local function readKey()
             wait(2)
             goingDownxd:TweenPosition(UDim2.new(0.493, 0,1.07, 0))
             wait(1)
-            script.Parent.Parent.Parent.Parent.Parent.FarXLoader:Destroy()
+            script.Parent.Parent.Parent.Parent.Parent.LimitXLoader:Destroy()
         end
         coroutine.wrap(TFOQWM_fake_script)()
         local function DDIVBK_fake_script()
@@ -994,7 +994,7 @@ Tab:AddButton({
             OrionLib:Destroy()
             wait(.3)
             MakeScriptHub()
-          writefile("farxkey/key.txt", getgenv().Key)
+          writefile("LimitXkey/key.txt", getgenv().Key)
         else
            OrionLib:MakeNotification({
                 Name = "Checking Key",
@@ -1016,22 +1016,22 @@ Tab:AddButton({
 Tab:AddButton({
 	Name = "Copy Key",
 	Callback = function()
-      		setclipboard("https://farxkey100.ascharielra.repl.co") 
+      		setclipboard("https://LimitXkey100.ascharielra.repl.co") 
   	end    
 })
     
 orionLib:Init() 
   end
 end
-if isfolder("/farxkey") then
-  if isfile("/farxkey/key.txt", "") then
+if isfolder("/LimitXkey") then
+  if isfile("/LimitXkey/key.txt", "") then
     readKey()
     else
-    writefile("/farxkey/key.txt", "")
+    writefile("/LimitXkey/key.txt", "")
     readKey()
   end
   else
-  makefolder("/farxkey")
-  writefile("/farxkey/key.txt", "")
+  makefolder("/LimitXkey")
+  writefile("/LimitXkey/key.txt", "")
   readKey()
 end
