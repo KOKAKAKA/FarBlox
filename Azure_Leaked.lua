@@ -468,7 +468,7 @@ function MakeScriptHub()
         loadstring(game:HttpGet(('https://pastebin.com/raw/wPsfrkwN'),true))()
 end
 
-getgenv().Key = "LimitX_0k729Hi7Hw72O05J"
+getgenv().Key = "LimitX_P9jI773H8HwoU72HoU82p"
 getgenv().KeyInput = "string"
 
 local function readKey()
