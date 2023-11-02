@@ -62,7 +62,7 @@ Tab:AddButton({
             })
             wait(1)
             OrionLib:Destroy()
-            wait(.3)
+            wait(3)
             MakeScriptHub()
           writefile("LimitXkey/key.txt", getgenv().Key)
         else
