@@ -1,11 +1,11 @@
 function MakeScriptHub()
-loadstring(game:HttpGet(('https://pastebin.com/raw/wPsfrkwN'),true))()
+  loadstring(game:HttpGet(('https://pastebin.com/raw/wPsfrkwN'),true))()
 end
 local HWID=game:GetService("RbxAnalyticsService"):GetClientId()
 getgenv().Key = HWID
 getgenv().KeyInput = "string"
 
-local function readKey()
+function readKey()
   if readfile("/LimitXkey/key.txt") == getgenv().Key then
     MakeScriptHub()
     else
@@ -36,8 +36,8 @@ local Tab = Window:MakeTab({
 
 Tab:AddTextbox({
 	Name = "Key",
-	Default = "Enter Key.",
-	TextDisappear = true,
+	Default = ".",
+	TextDisappear = false,
 	Callback = function(Value)
 		getgenv().KeyInput = Value
 	end	  
@@ -91,6 +91,7 @@ Tab:AddButton({
 })
   end
 end
+
 if isfolder("/LimitXkey") then
   if isfile("/LimitXkey/key.txt", "") then
     readKey()
