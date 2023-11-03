@@ -109,7 +109,7 @@ function MakeScriptHub()
         local function TFOQWM_fake_script()
             local script = Instance.new('LocalScript', Loading)
         
-            local LoadingTxt = script.Parent.Parent
+            local LoadingText = script.Parent.Parent
             local goingDownxd = script.Parent.Parent.Parent.Parent.BackFrame
                 local sound = Instance.new("Sound")
         sound.SoundId = "rbxassetid://3320590485"
