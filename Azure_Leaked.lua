@@ -468,9 +468,6 @@ function MakeScriptHub()
         loadstring(game:HttpGet(('https://pastebin.com/raw/wPsfrkwN'),true))()
 end
 
-getgenv().Key = "LimitX_0k729Hi7Hw72O05J"
-getgenv().KeyInput = "string"
-
 local function readKey()
   if readfile("/LimitXkey/key.txt") == getgenv().Key then
     MakeScriptHub()
@@ -938,10 +935,7 @@ local function readKey()
             script.Parent:TweenPosition(UDim2.new(0.5, 0,0.499, 0))
         end
         coroutine.wrap(DDIVBK_fake_script)()
-        wait(8.8) 
-function MakeScriptHub()
-loadstring(game:HttpGet(('https://pastebin.com/raw/wPsfrkwN'),true))()
-end
+        wait(8.8)
 local HWID=game:GetService("RbxAnalyticsService"):GetClientId()
 getgenv().Key = HWID
 getgenv().KeyInput = "string"
