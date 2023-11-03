@@ -939,11 +939,6 @@ local function readKey()
 local HWID=game:GetService("RbxAnalyticsService"):GetClientId()
 getgenv().Key = HWID
 getgenv().KeyInput = "string"
-
-local function readKey()
-  if readfile("/LimitXkey/key.txt") == getgenv().Key then
-    MakeScriptHub()
-    else
     local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/ionlyusegithubformcmods/1-Line-Scripts/main/Mobile%20Friendly%20Orion')))() 
 local Player = game.Players.LocalPlayer
   local Window = OrionLib:MakeWindow({
