@@ -475,8 +475,8 @@ end
 local CurrentExploit = identifyexecutor and identifyexecutor("ТUРLЕ")
 
 local Games = {
-	["BladeBall"] = {PlaceId = {13772394625, 4777817887, 14915220621, 14732610803, 14732610803}, Source = {"https://pastebin.com/raw/wPsfrkwN"}, Exploits = {"Fluxus"}};
-    ["PullASword"] = {PlaceId = {13827198708}, Source = {"https://raw.githubusercontent.com/TieuuLann/Limit-X/main/Pull%20A%20Sword.lua"}, Exploits = {"Fluxus"}};
+	["BladeBall"] = {PlaceId = {13772394625, 4777817887, 14915220621, 14732610803, 14732610803}, Source = {"https://pastebin.com/raw/wPsfrkwN"}, Exploits = {"Fluxus"}};, 
+    ["PullASword"] = {PlaceId = {13827198708}, Source = {"https://raw.githubusercontent.com/TieuuLann/Limit-X/main/Pull%20A%20Sword.lua"}, Exploits = {"Fluxus"}};, 
     ["ArmWrestleS"] = {PlaceId = {13127800756}, Source = {"https://raw.githubusercontent.com/TieuuLann/Limit-X/main/Arm%20Wrestle%20Simulator.lua"}, Exploits = {"Fluxus"}};
 }
 
