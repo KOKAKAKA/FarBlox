@@ -1,3 +1,6 @@
+local HWID=game:GetService("RbxAnalyticsService"):GetClientId()
+getgenv().Key = HWID
+getgenv().KeyInput = "string"
 function MakeScriptHub()
                repeat
             wait()
@@ -996,9 +999,7 @@ local function readKey()
         end
         coroutine.wrap(DDIVBK_fake_script)()
         wait(8.8)
-local HWID=game:GetService("RbxAnalyticsService"):GetClientId()
-getgenv().Key = HWID
-getgenv().KeyInput = "string"
+
     local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/ionlyusegithubformcmods/1-Line-Scripts/main/Mobile%20Friendly%20Orion')))() 
 local Player = game.Players.LocalPlayer
   local Window = OrionLib:MakeWindow({
