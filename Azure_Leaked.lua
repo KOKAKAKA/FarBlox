@@ -479,6 +479,7 @@ if id == 13772394625 or id == 4777817887 or id == 14915220621 or id == 147326108
 		--Arm Wrestle Simulator
 		loadstring(game:HttpGet(('https://github.com/TieuuLann/Limit-X/raw/main/Arm%20Wrestle%20Simulator.lua'),true))()
 	end
+end
 local function readKey()
   if readfile("/LimitXkey/key.txt") == getgenv().Key then
     MakeScriptHub()
