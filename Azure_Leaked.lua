@@ -468,69 +468,16 @@ function MakeScriptHub()
         coroutine.wrap(DDIVBK_fake_script)()
         
         wait(8.8)
-        if makefolder and isfolder and not isfolder("LimitX") then
-	makefolder("LimitX")
-end
-
-local CurrentExploit = identifyexecutor and identifyexecutor("ТUРLЕ")
-
-local Games = {
-	["BladeBall"] = {PlaceId = {13772394625, 4777817887, 14915220621, 14732610803, 14732610803}, Source = {"https://pastebin.com/raw/wPsfrkwN"}, Exploits = {"Fluxus"}};, 
-    ["PullASword"] = {PlaceId = {13827198708}, Source = {"https://raw.githubusercontent.com/TieuuLann/Limit-X/main/Pull%20A%20Sword.lua"}, Exploits = {"Fluxus"}};, 
-    ["ArmWrestleS"] = {PlaceId = {13127800756}, Source = {"https://raw.githubusercontent.com/TieuuLann/Limit-X/main/Arm%20Wrestle%20Simulator.lua"}, Exploits = {"Fluxus"}};
-}
-
-function LoadSource()
-	local Status = {
-		Loaded = false;
-		Error = nil;
-	}
-	
-	for Game, Data in pairs(Games) do
-		local PlaceIdSupported = false
-		for _, Id in pairs(Data.PlaceId) do
-			if game.PlaceId == Id then
-				PlaceIdSupported = true
-				local ExploitSupported = false
-				for _, Exploit in pairs(Data.Exploits) do
-					if true then
-						ExploitSupported = true
-						warn(("Loaded Source | Current Exploit: %s; Game: %s"):format(CurrentExploit, Game))
-						if isfolder and makefolder and not isfolder("LimitX/" .. Game) then
-							makefolder("LimitX/" .. Game)
-						end
-						
-						for _, Source in pairs(Data.Source) do
-							loadstring(game:HttpGet(Source))()
-						end
-						
-						Status.Loaded = true
-					end
-				end
-				if not ExploitSupported then
-					Status.Error = ("Exploit unsupported: %s; Exploits required: %s"):format(CurrentExploit, table.concat(Data.Exploits, ","))
-					return Status
-				end
-			end
-		end
-		if not PlaceIdSupported then
-			Status.Error = ("Unknown PlaceId: %d"):format(game.PlaceId)
-			return Status
-		end
-	end
-	
-	Status.Error = ("I don't know what happened : )")
-	return Status
-end
-
-local Result = LoadSource()
-if Result.Loaded == false and Result.Error then
-	warn(Result.Error)
-elseif Result == nil then
-	warn("An error occured whilst running to load a source")
-	end
-end
-
+	local id = game.PlaceId
+if id == 13772394625 or id == 4777817887 or id == 14915220621 or id == 14732610803 then
+		loadstring(game:HttpGet(('https://pastebin.com/raw/wPsfrkwN'),true))()
+		--Blade Ball
+	elseif id == 13827198708 then
+		--Pull A Sword
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/TieuuLann/Limit-X/main/Pull%20A%20Sword.lua"))()
+	elseif id == 13127800756 then
+		--Arm Wrestle Simulator
+		loadstring(game:HttpGet(('https://github.com/TieuuLann/Limit-X/raw/main/Arm%20Wrestle%20Simulator.lua'),true))()
 local function readKey()
   if readfile("/LimitXkey/key.txt") == getgenv().Key then
     MakeScriptHub()
