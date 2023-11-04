@@ -1,7 +1,7 @@
 local HWID=game:GetService("RbxAnalyticsService"):GetClientId()
 getgenv().Key = HWID
 getgenv().KeyInput = "string"
-getgenv().Earlyacces = "qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM100200300400500600700800900"..HWID
+local yes = "qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM100200300400500600700800900"..HWID
 function MakeScriptHub()
                repeat
             wait()
@@ -1223,7 +1223,7 @@ end
 local function readKey()
   if readfile("/LimitXkey/key.txt") == getgenv().Key then
     MakeScriptHub()
-    elseif readfile("/LimitXkey/key.txt") == getgenv().Earlyacces then
+    elseif readfile("/LimitXkey/key.txt") == yes then
     EarlyAcces()
 			else
 
