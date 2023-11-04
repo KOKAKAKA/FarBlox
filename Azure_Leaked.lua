@@ -952,7 +952,7 @@ local tab = DrRayLibrary.newTab("Auto Parry", "ImageIdHere")
 
 tab.newButton("Auto Parry", "Auto Parry Op", function()
     getgenv().config = getgenv().config or {
-	hit_time = 0.33
+	hit_time = 0.36
 , -- // recommended 0.25 to 0.75 \\ --
 	
 	mode = 'Always', -- // Hold , Toggle , Always \\ --
@@ -973,7 +973,7 @@ tab.newButton("100% Win", "Auto Farm Mode", function()
 end)
 tab.newButton("Auto Curve (Beta)", "Warning!!! Don't Set Auto Parry Distance Or It Will Break", function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/Hosvile/Refinement/main/MC%3ABlade%20Ball%20Parry%20V2.0.0",true))()
-getgenv().config[1] = 0.33
+getgenv().config[1] = 0.35
 
 end)
 tab.newSlider("Distance", "Auto Parry Distance (0-0.75)", 0.75, true, function(num)
