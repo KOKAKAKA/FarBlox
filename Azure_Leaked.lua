@@ -966,15 +966,21 @@ yes = true
 while true do
 wait()
 game.StarterGui:SetCore("SendNotification", {
-Title = "Auto Parry Loaded",
+Title = "Auto Parry Loading",
 Text = "Auto Parry By Yumi",
 Duration = 10,
-Button1 = " Ok" , 
+Button1 = "Ok", 
 Button2 = "Ok", 
 })
+print(" pls wait 9 sec") 
+--Get the StarterGui service
+local StarterGui = game:GetService("StarterGui") 
+
+StarterGui:SetCore("DevConsoleVisible", true) -- true to open, false to close
 end
 wait(9)
 yes = false
+			print("loaded u can close now") 
 		end)
 tab.newButton("Hold Block Spam", "Hold Block Spam", function()
     getgenv().SpamSpeed = 20
