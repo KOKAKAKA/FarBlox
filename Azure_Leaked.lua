@@ -973,7 +973,7 @@ tab.newButton("100% Win", "Auto Farm Mode", function()
 end)
 tab.newButton("Auto Curve (Beta)", "Warning!!! Don't Set Auto Parry Distance Or It Will Break", function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/Hosvile/Refinement/main/MC%3ABlade%20Ball%20Parry%20V2.0.0",true))()
-getgenv().config[1] = 0.35
+getgenv().config[1] = 0.4
 
 end)
 tab.newSlider("Distance", "Auto Parry Distance (0-0.75)", 0.75, true, function(num)
