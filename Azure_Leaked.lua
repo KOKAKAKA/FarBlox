@@ -972,7 +972,6 @@ Duration = 10,
 Button1 = "Ok", 
 Button2 = "Ok", 
 })
-print(" pls wait 9 sec") 
 --Get the StarterGui service
 local StarterGui = game:GetService("StarterGui") 
 
@@ -982,9 +981,12 @@ wait(8)
 local yes = false
 			wait(1)
 			print("loaded u can close now")
+			while yes == false then
 			local StarterGui = game:GetService("StarterGui") 
 
 StarterGui:SetCore("DevConsoleVisible", false) -- true to open, false to close
+			wait()
+		end
 		end)
 tab.newButton("Hold Block Spam", "Hold Block Spam", function()
     getgenv().SpamSpeed = 20
