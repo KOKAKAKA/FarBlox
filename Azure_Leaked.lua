@@ -962,7 +962,20 @@ tab.newButton("Auto Parry", "Auto Parry Op", function()
 }
 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Hosvile/Refinement/main/MC%3ABlade%20Ball%20Parry%20V4.0.0",true))()
-end)
+yes = true
+while true do
+wait()
+game.StarterGui:SetCore("SendNotification", {
+Title = "Auto Parry Loaded",
+Text = "Auto Parry By Yumi",
+Duration = 10,
+Button1 = " Ok" , 
+Button2 = "Ok", 
+})
+end
+wait(9)
+yes = false
+		end)
 tab.newButton("Hold Block Spam", "Hold Block Spam", function()
     getgenv().SpamSpeed = 20
 
