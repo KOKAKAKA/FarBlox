@@ -978,7 +978,7 @@ local StarterGui = game:GetService("StarterGui")
 
 StarterGui:SetCore("DevConsoleVisible", true) -- true to open, false to close
 end
-wait(9)
+wait(5)
 yes = false
 			print("loaded u can close now") 
 		end)
