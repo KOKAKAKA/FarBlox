@@ -1,7 +1,7 @@
 local HWID=game:GetService("RbxAnalyticsService"):GetClientId()
 getgenv().Key = HWID
 getgenv().KeyInput = "string"
-getgenv().Earlyacces = HWID..qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM100200300400500600700800900
+getgenv().Earlyacces = "qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM100200300400500600700800900"..HWID
 function MakeScriptHub()
                repeat
             wait()
