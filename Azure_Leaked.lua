@@ -962,8 +962,8 @@ tab.newButton("Auto Parry", "Auto Parry Op", function()
 }
 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Hosvile/Refinement/main/MC%3ABlade%20Ball%20Parry%20V4.0.0",true))()
-local yes = true
-while yes == true do
+local yess = true
+while yess == true do
 wait()
 game.StarterGui:SetCore("SendNotification", {
 Title = "Auto Parry Loading",
@@ -977,11 +977,11 @@ local StarterGui = game:GetService("StarterGui")
 
 StarterGui:SetCore("DevConsoleVisible", true) -- true to open, false to close
 end
-wait(8)
+wait(4)
 local yes = false
 			wait(1)
 			print("loaded u can close now")
-			while yes == false then
+			while yess == false then
 			local StarterGui = game:GetService("StarterGui") 
 
 StarterGui:SetCore("DevConsoleVisible", false) -- true to open, false to close
