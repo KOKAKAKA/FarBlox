@@ -1243,11 +1243,12 @@ for i, v in pairs(table) do
     print("whitelisted")
 		Paid()
 		writefile("/LimitXkey/key.txt", getgenv().Key)
+		local notwhitelisted = true
     else
   end
 end
 local function readKey()
-  if readfile("/LimitXkey/key.txt") == getgenv().Key then
+  if readfile("/LimitXkey/key.txt") == getgenv().Key and notwhitelisted == true then
     MakeScriptHub()
 			else
 
