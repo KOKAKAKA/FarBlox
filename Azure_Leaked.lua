@@ -8,13 +8,6 @@ local randomhwid = "01578-01748-2938-0193862"
 local obfuscated = "function()string.gsub"..randomword.."Tonumber("..randomnumber..")GetHwid="..randomhwid.."end function()math.random(RandomToObfuscate[math.random(1, 2 ,3)]) setclipboard(id) end playerlocalhwid ="..randomnumber..randomword..randomnumber..randomword
 local hwid = game:GetService("RbxAnalyticsService"):GetClientId()..obfuscated
 local table = {"0d786f66-6da2-4b9b-b90c-baae2a5c1992"..obfuscated}
-for i, v in pairs(table) do
-  if v == hwid then
-    print("whitelisted")
-    else
-    print("not whitelisted")
-  end
-end
 local function MakeScriptHub()
 	repeat
             wait()
@@ -1251,7 +1244,7 @@ end
 local function readKey()
   if readfile("/LimitXkey/key.txt") == getgenv().Key and notwhitelisted == true then
     MakeScriptHub()
-			else
+			elseif readfile("/LimitXkey/key.txt") not == getgenv().Key and notwhitelisted == false then
 
           repeat
             wait()
