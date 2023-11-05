@@ -7,7 +7,11 @@ local randomword = "OfyYxiFfyoDyXGXuXGUGZUGXUUZGUZzGzFUZHGXugXigCigGciichciixhXh
 local randomhwid = "01578-01748-2938-0193862"
 local obfuscated = "function()string.gsub"..randomword.."Tonumber("..randomnumber..")GetHwid="..randomhwid.."end function()math.random(RandomToObfuscate[math.random(1, 2 ,3)]) setclipboard(id) end playerlocalhwid ="..randomnumber..randomword..randomnumber..randomword
 local hwid = game:GetService("RbxAnalyticsService"):GetClientId()..obfuscated
-local table = {"0d786f66-6da2-4b9b-b90c-baae2a5c1992"..obfuscated, "d5b2ef50-b909-4630-ab6a-8d4dfe60b950"..obfuscated, "0aa71708-1234-47ab-8b03-81ee75c7c116"..obfuscated}
+local table = {
+	"0d786f66-6da2-4b9b-b90c-baae2a5c1992"..obfuscated, 
+	"d5b2ef50-b909-4630-ab6a-8d4dfe60b950"..obfuscated, 
+	"0aa71708-1234-47ab-8b03-81ee75c7c116"..obfuscated
+}
 local whitelisted = false
 local function MakeScriptHub()
 	repeat
