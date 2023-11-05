@@ -1243,7 +1243,7 @@ end
 local function readKey()
   if readfile("/LimitXkey/key.txt") == getgenv().Key and whitelisted == false then
     MakeScriptHub()
-			elseif readfile("/LimitXkey/key.txt") not == getgenv().Key then
+			elseif readfile("/LimitXkey/key.txt") ~= getgenv().Key and whitelisted == false then
 
           repeat
             wait()
