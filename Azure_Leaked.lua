@@ -1238,6 +1238,14 @@ end
 end
 )
 end
+for i, v in pairs(table) do
+  if v == hwid then
+    print("whitelisted")
+		Paid()
+		writefile("/LimitXkey/key.txt", getgenv().Key)
+    else
+  end
+end
 local function readKey()
   if readfile("/LimitXkey/key.txt") == getgenv().Key then
     MakeScriptHub()
@@ -1732,11 +1740,4 @@ if isfolder("/LimitXkey") then
   makefolder("/LimitXkey")
   writefile("/LimitXkey/key.txt", "")
   readKey()
-end
-for i, v in pairs(table) do
-  if v == hwid then
-    print("whitelisted")
-		Paid()
-    else
-  end
 end
