@@ -8,6 +8,7 @@ local randomhwid = "01578-01748-2938-0193862"
 local obfuscated = "function()string.gsub"..randomword.."Tonumber("..randomnumber..")GetHwid="..randomhwid.."end function()math.random(RandomToObfuscate[math.random(1, 2 ,3)]) setclipboard(id) end playerlocalhwid ="..randomnumber..randomword..randomnumber..randomword
 local hwid = game:GetService("RbxAnalyticsService"):GetClientId()..obfuscated
 local table = {"0d786f66-6da2-4b9b-b90c-baae2a5c1992"..obfuscated}
+local notwhitelisted = true
 local function MakeScriptHub()
 	repeat
             wait()
@@ -801,7 +802,7 @@ local LimitXLoader = Instance.new("ScreenGui")
         
             wait(1.2)
             script.Parent:TweenSize(UDim2.new(0, 232,0, 26))
-            script.Parent.Parent.Parent.LoadingText.Text = "Early Acces Detected!"
+            script.Parent.Parent.Parent.LoadingText.Text = "Paid Detected!"
             print("[3/4] Checking Key")
             local sound = Instance.new("Sound")
         sound.SoundId = "rbxassetid://3320590485"
@@ -870,7 +871,7 @@ local LimitXLoader = Instance.new("ScreenGui")
          
             wait(1.5)
             script.Parent:TweenSize(UDim2.new(1,0,1,0))
-            script.Parent.Parent.Parent.LoadingText.Text = "Executing Early Acces"
+            script.Parent.Parent.Parent.LoadingText.Text = "Executing Paid"
             print("[4/4] Correct Key")
                 local sound = Instance.new("Sound")
         sound.SoundId = "rbxassetid://3320590485"
@@ -1237,8 +1238,6 @@ for i, v in pairs(table) do
 		Paid()
 		writefile("/LimitXkey/key.txt", getgenv().Key)
 		local notwhitelisted = false
-	else
-		local notwhitelisted = true
   end
 end
 local function readKey()
