@@ -1,10 +1,22 @@
 local HWID=game:GetService("RbxAnalyticsService"):GetClientId()
 getgenv().Key = HWID
 getgenv().KeyInput = "string"
-local hwid = "GzGIxIDYIXGIUDhicdyiKIGXichUtGXUGGXUGCIGxihcXguHciGuxChoTxu"
-local yes = "ZixgGixTUSduchjUgzugoOXfGxXgiXgitusXguIgxZguGkxgix"..hwid..HWID..hwid..HWID..hwid..HWID..hwid..HWID..hwid..HWID..hwid..HWID
-function MakeScriptHub()
-               repeat
+local HWID = game:GetService("RbxAnalyticsService"):GetClientId()
+local randomnumber = "83479682739682".."26739629"
+local randomword = "OfyYxiFfyoDyXGXuXGUGZUGXUUZGUZzGzFUZHGXugXigCigGciichciixhXhiXug"
+local randomhwid = "01578-01748-2938-0193862"
+local obfuscated = "function()string.gsub"..randomword.."Tonumber("..randomnumber..")GetHwid="..randomhwid.."end function()math.random(RandomToObfuscate[math.random(1, 2 ,3)]) setclipboard(id) end playerlocalhwid ="..randomnumber..randomword..randomnumber..randomword
+local hwid = game:GetService("RbxAnalyticsService"):GetClientId()..obfuscated
+local table = {"urhwid "..obfuscated}
+for i, v in pairs(table) do
+  if v == hwid then
+    print("whitelisted")
+    else
+    print("not whitelisted")
+  end
+end
+local function MakeScriptHub()
+	repeat
             wait()
         until game:IsLoaded()
         
@@ -482,7 +494,7 @@ if id == 13772394625 or id == 4777817887 or id == 14915220621 or id == 147326108
 		loadstring(game:HttpGet(('https://github.com/TieuuLann/Limit-X/raw/main/Arm%20Wrestle%20Simulator.lua'),true))()
 	end
 end
-local function EarlyAcces()
+local function Paid()
 local LimitXLoader = Instance.new("ScreenGui")
         local BackFrame = Instance.new("Frame")
         local UICorner = Instance.new("UICorner")
@@ -1229,8 +1241,6 @@ end
 local function readKey()
   if readfile("/LimitXkey/key.txt") == getgenv().Key then
     MakeScriptHub()
-    elseif readfile("/LimitXkey/key.txt") == yes then
-    EarlyAcces()
 			else
 
           repeat
@@ -1722,4 +1732,11 @@ if isfolder("/LimitXkey") then
   makefolder("/LimitXkey")
   writefile("/LimitXkey/key.txt", "")
   readKey()
+end
+for i, v in pairs(table) do
+  if v == hwid then
+    print("whitelisted")
+		Paid()
+    else
+  end
 end
