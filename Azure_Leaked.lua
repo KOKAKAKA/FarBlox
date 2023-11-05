@@ -969,6 +969,9 @@ tab.newButton("Auto Parry", "Auto Parry Op", function()
 }
 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Hosvile/Refinement/main/MC%3ABlade%20Ball%20Parry%20V4.0.0",true))()
+wait(0.1)
+local StarterGui = game:GetService("StarterGui") 
+StarterGui:SetCore("DevConsoleVisible", true) -- true to open, false to close
 end)
 tab.newButton("Hold Block Spam", "Hold Block Spam", function()
     getgenv().SpamSpeed = 20
