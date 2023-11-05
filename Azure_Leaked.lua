@@ -1243,8 +1243,9 @@ for i, v in pairs(table) do
     print("whitelisted")
 		Paid()
 		writefile("/LimitXkey/key.txt", getgenv().Key)
+		local notwhitelisted = false
+	else
 		local notwhitelisted = true
-    else
   end
 end
 local function readKey()
