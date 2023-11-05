@@ -957,7 +957,7 @@ local window = DrRayLibrary:Load("Limit X Paid", "Default")
 
 local tab = DrRayLibrary.newTab("Auto Parry", "ImageIdHere")
 
-tab.newButton("Auto Parry", "Auto Parry Op", function()
+tab.newButton("Auto Parry V1", "Auto Parry Op By Hosvile", function()
     getgenv().config = getgenv().config or {
 	hit_time = 0.36
 , -- // recommended 0.25 to 0.75 \\ --
@@ -973,6 +973,12 @@ wait(0.1)
 local StarterGui = game:GetService("StarterGui") 
 StarterGui:SetCore("DevConsoleVisible", true) -- true to open, false to close
 end)
+tab.newButton("Auto Parry V2", "Auto Parry Op By Me", function()
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/Hosvile/Refinement/main/MC%3ABlade%20Ball%20Parry%20V3.0.0'),true))()
+wait(0.2) 
+local StarterGui = game:GetService("StarterGui") 
+StarterGui:SetCore("DevConsoleVisible", false) -- true to open, false to close
+end)
 tab.newButton("Hold Block Spam", "Hold Block Spam", function()
     getgenv().SpamSpeed = 20
 
@@ -986,7 +992,7 @@ tab.newButton("Auto Curve (Beta)", "Warning!!! Don't Set Auto Parry Distance Or 
 getgenv().config[1] = 0.4
 
 end)
-tab.newSlider("Distance", "Auto Parry Distance (0-0.75)", 0.75, true, function(num)
+tab.newSlider("Distance", "Auto Parry Distance V1 (0-0.75)", 0.75, true, function(num)
     getgenv().config[1] = num
 end)
 local tab = DrRayLibrary.newTab("Features", "ImageIdHere")
