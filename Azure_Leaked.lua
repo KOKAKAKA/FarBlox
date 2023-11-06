@@ -991,9 +991,9 @@ local workspace = game:GetService("Workspace")
 local players = game:GetService("Players")
 local replicatedStorage = game:GetService("ReplicatedStorage")
 local localPlayer = players.LocalPlayer
-local BASE_THRESHOLD = 0.2
-local VELOCITY_SCALING_FACTOR_FAST = 0.050
-local VELOCITY_SCALING_FACTOR_SLOW = 0.1
+local BASE_THRESHOLD = 0.4
+local VELOCITY_SCALING_FACTOR_FAST = 0.060
+local VELOCITY_SCALING_FACTOR_SLOW = 0.11
 local UserInputService = game:GetService("UserInputService")
 local responses = {"lol what", "??", "wdym", "bru what", "mad cuz bad", "skill issue", "cry"}
 local gameEndResponses = {"ggs", "gg :3", "good game", "ggs yall", "wp", "ggs man"}
@@ -1221,11 +1221,11 @@ tab.newButton("Auto Curve (Beta)", "Warning!!! Don't Set Auto Parry Distance Or 
 getgenv().config[1] = 0.4
 
 end)
-tab.newInput("Distance", "Auto Parry V1 Best Is 0.25-0.75", function(text)
-    getgenv.config[1]=text
+tab.newInput("Distance", "Auto Parry V1 Best Is 0.25-0.75", function(dis)
+getgenv().config[1] = dis
 end)
 tab.newInput("Set Custom Auto Parry Sound", "Set Your Custom Auto Parry Sound", function(text)
-    sndsrc=text
+    sndsrc = text
 end)
 local tab = DrRayLibrary.newTab("Features", "ImageIdHere")
 tab.newButton("Keyboard", "Keyboard For Freeze Ball: B And Lag Server : N", function()
