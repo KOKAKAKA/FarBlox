@@ -986,6 +986,228 @@ wait(0.2)
 local StarterGui = game:GetService("StarterGui") 
 StarterGui:SetCore("DevConsoleVisible", false) -- true to open, false to close
 end)
+tab.newButton("Auto Parry Custom Sound", "Warning!!! Execute While In Match", function()
+local workspace = game:GetService("Workspace")
+local players = game:GetService("Players")
+local replicatedStorage = game:GetService("ReplicatedStorage")
+local localPlayer = players.LocalPlayer
+local BASE_THRESHOLD = 0.2
+local VELOCITY_SCALING_FACTOR_FAST = 0.050
+local VELOCITY_SCALING_FACTOR_SLOW = 0.1
+local UserInputService = game:GetService("UserInputService")
+local responses = {"lol what", "??", "wdym", "bru what", "mad cuz bad", "skill issue", "cry"}
+local gameEndResponses = {"ggs", "gg :3", "good game", "ggs yall", "wp", "ggs man"}
+local keywords = {"auto parry", "auto", "cheating", "hacking"}
+local heartbeatConnection
+local focusedBall, displayBall = nil, nil
+local character = localPlayer.Character or localPlayer.CharacterAdded:Wait()
+local ballsFolder = workspace:WaitForChild("Balls")
+local parryButtonPress = replicatedStorage.Remotes.ParryButtonPress
+local abilityButtonPress = replicatedStorage.Remotes.AbilityButtonPress
+local sliderValue = 20
+local distanceVisualizer = nil
+local isRunning = false
+local notifyparried = false
+local PlayerGui = localPlayer:WaitForChild("PlayerGui")
+local Hotbar = PlayerGui:WaitForChild("Hotbar")
+local UseRage = false
+local sndsrc = "7148004421"
+local uigrad1 = Hotbar.Block.border1.UIGradient
+local uigrad2 = Hotbar.Ability.border2.UIGradient
+
+if character then
+    print("Character found.")
+else
+    print("Character not found.")
+    return
+end
+
+local function Parry()
+  parryButtonPress:Fire()
+  local sound = Instance.new("Sound")
+  sound.SoundId = "rbxassetid://"..sndsrc
+  sound.Parent = game:GetService("SoundService")
+  sound:Play()
+end
+
+local function getPlayerPing()
+    local ping = game:GetService("Stats").Network.ServerStatsItem["Data Ping"]:GetValue()
+    return ping
+end
+
+local function mapPingToDistance(ping)
+    local multiplier = 0.15
+    local offset = 15
+    return math.min(100, math.max(0, ping * multiplier + offset))
+end
+
+
+local function chooseNewFocusedBall()
+    local balls = ballsFolder:GetChildren()
+    for _, ball in ipairs(balls) do
+        if ball:GetAttribute("realBall") ~= nil and ball:GetAttribute("realBall") == true then
+            focusedBall = ball
+            print(focusedBall.Name)
+            break
+        elseif ball:GetAttribute("target") ~= nil then
+            focusedBall = ball
+            print(focusedBall.Name)
+            break
+        end
+    end
+    
+    if focusedBall == nil then
+        print("Debug: Could not find a ball that's the realBall or has a target.")
+        wait(3)
+        chooseNewFocusedBall()
+    end
+    return focusedBall
+end
+
+local function getDynamicThreshold(ballVelocityMagnitude)
+    if ballVelocityMagnitude > 60 then
+        return math.max(0.20, BASE_THRESHOLD - (ballVelocityMagnitude * VELOCITY_SCALING_FACTOR_FAST))
+    else
+        return math.min(0.01, BASE_THRESHOLD + (ballVelocityMagnitude * VELOCITY_SCALING_FACTOR_SLOW))
+    end
+end
+
+local function timeUntilImpact(ballVelocity, distanceToPlayer, playerVelocity)
+    if not character then return end
+    local directionToPlayer = (character.HumanoidRootPart.Position - focusedBall.Position).Unit
+    local velocityTowardsPlayer = ballVelocity:Dot(directionToPlayer) - playerVelocity:Dot(directionToPlayer)
+    
+    if velocityTowardsPlayer <= 0 then
+        return math.huge
+    end
+    
+    return (distanceToPlayer - sliderValue) / velocityTowardsPlayer
+end
+
+local function updateDistanceVisualizer()
+    local charPos = character and character.PrimaryPart and character.PrimaryPart.Position
+    if charPos and focusedBall then
+        if distanceVisualizer then
+            distanceVisualizer:Destroy()
+        end
+
+        local timeToImpactValue = timeUntilImpact(focusedBall.Velocity, (focusedBall.Position - charPos).Magnitude, character.PrimaryPart.Velocity)
+        local ballFuturePosition = focusedBall.Position + focusedBall.Velocity * timeToImpactValue
+
+        distanceVisualizer = Instance.new("Part")
+        distanceVisualizer.Size = Vector3.new(1, 1, 1)
+        distanceVisualizer.Anchored = true
+        distanceVisualizer.CanCollide = false
+        distanceVisualizer.Position = ballFuturePosition
+        distanceVisualizer.Parent = workspace    
+    end
+end
+
+
+local function checkIfTarget()
+    for _, v in pairs(ballsFolder:GetChildren()) do
+        if v:IsA("Part") and v.BrickColor == BrickColor.new("Really red") then 
+            print("Ball is targetting player.")
+            return true 
+        end 
+    end 
+    return false
+end
+
+local function isCooldownInEffect(uigradient)
+    return uigradient.Offset.Y < 0.5
+end
+
+local function checkBallDistance()
+    if not character or not checkIfTarget() then return end
+
+    local charPos = character.PrimaryPart.Position
+    local charVel = character.PrimaryPart.Velocity
+
+    if focusedBall and not focusedBall.Parent then
+        print("Focused ball lost parent. Choosing a new focused ball.")
+        chooseNewFocusedBall()
+    end
+    if not focusedBall then 
+        print("No focused ball.")
+        chooseNewFocusedBall()
+    end
+
+    local ball = focusedBall
+    local distanceToPlayer = (ball.Position - charPos).Magnitude
+    local ballVelocityTowardsPlayer = ball.Velocity:Dot((charPos - ball.Position).Unit)
+    if ball.zoomies.VectorVelocity == nil or (ball.zoomies.VectorVelocity.x == -0 or ball.zoomies.VectorVelocity.x == 0 or ball.zoomies.VectorVelocity.y == -0 or ball.zoomies.VectorVelocity.y == 0 or ball.zoomies.VectorVelocity.z == -0 or ball.zoomies.VectorVelocity.z == 0) then
+        return 
+    end
+
+    if distanceToPlayer <= 15 then
+        Parry()
+        task.wait(0.5)
+    end
+
+    if timeUntilImpact(ball.Velocity, distanceToPlayer, charVel) < getDynamicThreshold(ballVelocityTowardsPlayer) then
+        if (character.Abilities["Raging Deflection"].Enabled or character.Abilities["Rapture"].Enabled) and UseRage == true then
+            if not isCooldownInEffect(uigrad2) then
+                abilityButtonPress:Fire()
+            end
+
+            if isCooldownInEffect(uigrad2) and not isCooldownInEffect(uigrad1) then
+                Parry()
+                if notifyparried == true then
+                    notify("Auto Parry", "Manually Parried Ball (Ability on CD)", 0.3)
+                end
+            end
+
+        elseif not isCooldownInEffect(uigrad1) then
+            print(isCooldownInEffect(uigrad1))
+            Parry()
+            if notifyparried == true then
+                notify("Auto Parry", "Automatically Parried Ball", 0.3)
+            end
+            task.wait(0.5)
+        end
+    end
+end
+
+
+local function autoParryCoroutine()
+    while isRunning do
+        local ping = getPlayerPing()
+        sliderValue = mapPingToDistance(ping)
+        
+        checkBallDistance()
+        updateDistanceVisualizer()
+        task.wait()
+    end
+end
+
+
+localPlayer.CharacterAdded:Connect(function(newCharacter)
+    character = newCharacter
+    chooseNewFocusedBall()
+    updateDistanceVisualizer()
+end)
+
+localPlayer.CharacterRemoving:Connect(function()
+    if distanceVisualizer then
+        distanceVisualizer:Destroy()
+        distanceVisualizer = nil
+    end
+end)
+
+
+
+local function startAutoParry()
+    print("Script successfully ran.")
+    
+    chooseNewFocusedBall()
+    
+    isRunning = true
+    local co = coroutine.create(autoParryCoroutine)
+    coroutine.resume(co)
+end
+startAutoParry()
+end)
 tab.newButton("Hold Block Spam", "Hold Block Spam", function()
     getgenv().SpamSpeed = 20
 
@@ -999,8 +1221,11 @@ tab.newButton("Auto Curve (Beta)", "Warning!!! Don't Set Auto Parry Distance Or 
 getgenv().config[1] = 0.4
 
 end)
-tab.newSlider("Distance", "Auto Parry Distance V1 (0-0.75)", 0.75, true, function(num)
-    getgenv().config[1] = num
+tab.newInput("Distance", "Auto Parry V1 Best Is 0.25-0.75", function(text)
+    getgenv.config[1]=text
+end)
+tab.newInput("Set Custom Auto Parry Sound", "Set Your Custom Auto Parry Sound", function(text)
+    sndsrc=text
 end)
 local tab = DrRayLibrary.newTab("Features", "ImageIdHere")
 tab.newButton("Keyboard", "Keyboard For Freeze Ball: B And Lag Server : N", function()
