@@ -1,13 +1,9 @@
 local HWID=game:GetService("RbxAnalyticsService"):GetClientId()
 getgenv().Key = HWID
 getgenv().KeyInput = "string"
-local HWID = game:GetService("RbxAnalyticsService"):GetClientId()
-local randomnumber = "83479682739682".."26739629"
-local randomword = "OfyYxiFfyoDyXGXuXGUGZUGXUUZGUZzGzFUZHGXugXigCigGciichciixhXhiXug"
-local randomhwid = "01578-01748-2938-0193862"
-local z = "Yessur"..randomhwid..randomword..randomnumber
-local hwid = game:GetService("RbxAnalyticsService"):GetClientId()..obfuscated
-local table = {"0d786f66-6da2-4b9b-b90c-baae2a5c1992"..z, "d5b2ef50-b909-4630-ab6a-8d4dfe60b950"..z, "0aa71708-1234-47ab-8b03-81ee75c7c116..z"}
+
+local hwid = game:GetService("RbxAnalyticsService"):GetClientId().."yes"
+local table = {"0d786f66-6da2-4b9b-b90c-baae2a5c1992"..hwid, "d5b2ef50-b909-4630-ab6a-8d4dfe60b950"..hwid, "0aa71708-1234-47ab-8b03-81ee75c7c116"..hwid}
 local whitelisted = false
 local function MakeScriptHub()
 	repeat
