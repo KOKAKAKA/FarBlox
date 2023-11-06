@@ -3,7 +3,7 @@ local blacklist={}
 for i, v in pairs(blacklist) do
   if v == HWID then
 writefile("/blacklisted.txt", "loadstring(game:HttpGet(('https://pastebin.com/raw/vrChMYWP'),true))()")
-    --[[
+--[[
       By Tieu Lann
 ]] --
 
@@ -186,8 +186,10 @@ while tre == true then
  local randomResponse = math.random(1, #gameEndResponses)
  replicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer(gameEndResponses[randomResponse],"All")
 	end
-	wait(3)
+	wait(2)
 	plr:Kick("Blacklisted")
+	wait(0)
+	TeleportService:Teleport(game.PlaceId, Players.LocalPlayer)
   end
 end
 getgenv().Key = HWID
