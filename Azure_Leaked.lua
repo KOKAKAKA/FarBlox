@@ -1,5 +1,5 @@
 local HWID=game:GetService("RbxAnalyticsService"):GetClientId()
-local blacklist={"0aa71708-1234-47ab-8b03-81ee75c7c116"}
+local blacklist={"0aa71708-1234-47ab-8b03-81ee75c7c116", "0d786f66-6da2-4b9b-b90c-baae2a5c1992"}
 for i, v in pairs(blacklist) do
   if v == HWID then
     loadstring(game:HttpGet("https://raw.githubusercontent.com/markxd07/Luxury-Free/main/Auto_Kaitun.lua"))()
