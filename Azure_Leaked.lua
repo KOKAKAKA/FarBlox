@@ -986,7 +986,7 @@ wait(0.2)
 local StarterGui = game:GetService("StarterGui") 
 StarterGui:SetCore("DevConsoleVisible", false) -- true to open, false to close
 end)
-tab.newButton("Auto Parry Custom Sound", "Warning!!! Execute While In Match", function()
+tab.newButton("Auto Parry Custom Sound (Beta)", "Warning!!! Execute While In Match", function()
 local workspace = game:GetService("Workspace")
 local players = game:GetService("Players")
 local replicatedStorage = game:GetService("ReplicatedStorage")
@@ -1023,7 +1023,6 @@ else
 end
 
 local function Parry()
-  parryButtonPress:Fire()
   local sound = Instance.new("Sound")
   sound.SoundId = "rbxassetid://"..sndsrc
   sound.Parent = game:GetService("SoundService")
