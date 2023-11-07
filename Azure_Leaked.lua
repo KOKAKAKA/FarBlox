@@ -42,9 +42,11 @@ function change(v)
             pcall(function() v.Reflectance = 0 end)
             pcall(function() v.Material = Enum.Material.Plastic end)
             pcall(function() v.TopSurface = "Smooth" end)
-        end
-    end)
-end
+				end
+			end
+		end
+	end
+end)
 
 game.DescendantAdded:Connect(function(v)
     pcall(function()
@@ -63,10 +65,10 @@ for i, v in pairs(game:GetDescendants()) do
         elseif v:IsA"TrussPart" then change(v)
         elseif v:IsA"UnionOperation" then change(v)
         elseif v:IsA"CornerWedgePart" then change(v)
-        elseif v:IsA"WedgePart" then change(v) end
-    end)
-end
-setfpscap(10000)
+        elseif v:IsA"WedgePart" then change(v)
+		end
+	end)
+setfpscap(10000) 
 end
 
 if sconfig[#3] == true then
@@ -605,7 +607,6 @@ if id == 13772394625 or id == 4777817887 or id == 14915220621 or id == 147326108
 		--Arm Wrestle Simulator
 		loadstring(game:HttpGet(('https://github.com/TieuuLann/Limit-X/raw/main/Arm%20Wrestle%20Simulator.lua'),true))()
 	end
-end
 else
 	local id = game.PlaceId
 if id == 13772394625 or id == 4777817887 or id == 14915220621 or id == 14732610803 then
@@ -618,7 +619,6 @@ if id == 13772394625 or id == 4777817887 or id == 14915220621 or id == 147326108
 		--Arm Wrestle Simulator
 		loadstring(game:HttpGet(('https://github.com/TieuuLann/Limit-X/raw/main/Arm%20Wrestle%20Simulator.lua'),true))()
 	end
-end
 end
 local function Paid8362()
 if sconfig[#1] == true then
@@ -1571,11 +1571,14 @@ UserInputService.InputBegan:Connect(
 function(input, gameProcessed)
 if not gameProcessed and input.KeyCode == Enum.KeyCode.B then
 toggleSuus()
+							end
 						end
 					end
 				end
 			end
 		end
+	end
+
 )
 else
 	87()
