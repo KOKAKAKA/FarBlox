@@ -1,11 +1,6 @@
-local limit.config = {
-["LoadingBar"] = true, 
-["FpsBoost"] = true, 
-["SuperFpsBoost"] = true, 
-["DestroyParticle"] = true
-}
+local limit.loading = true
 local function Loading()
-if limit.config[#1] == true then
+if limit.loading == true then
 	repeat
             wait()
         until game:IsLoaded()
@@ -474,112 +469,7 @@ if limit.config[#1] == true then
         wait(8.8)
         end 
 end
-if limit.config[#2] == true then
-    if not game:IsLoaded() then repeat wait() until game:IsLoaded() end
-if hookfunction and setreadonly then
-    local mt = getrawmetatable(game)
-    local old = mt.__newindex
-    setreadonly(mt, false)
-    local sda
-    sda = hookfunction(old, function(t, k, v)
-        if k == "Material" then
-            if v ~= Enum.Material.Neon and v ~= Enum.Material.Plastic and v ~= Enum.Material.ForceField then v = Enum.Material.Plastic end
-        elseif k == "TopSurface" then v = "Smooth"
-        elseif k == "Reflectance" or k == "WaterWaveSize" or k == "WaterWaveSpeed" or k == "WaterReflectance" then v = 0
-        elseif k == "WaterTransparency" then v = 1
-        elseif k == "GlobalShadows" then v = false end
-        return sda(t, k, v)
-    end)
-    setreadonly(mt, true)
-end
-local g = game
-local w = g.Workspace
-local l = g:GetService"Lighting"
-local t = w:WaitForChild"Terrain"
-t.WaterWaveSize = 0
-t.WaterWaveSpeed = 0
-t.WaterReflectance = 0
-t.WaterTransparency = 1
-l.GlobalShadows = false
 
-function change(v)
-    pcall(function()
-        if v.Material ~= Enum.Material.Neon and v.Material ~= Enum.Material.Plastic and v.Material ~= Enum.Material.ForceField then
-            pcall(function() v.Reflectance = 0 end)
-            pcall(function() v.Material = Enum.Material.Plastic end)
-            pcall(function() v.TopSurface = "Smooth" end)
-        end
-    end)
-end
-
-game.DescendantAdded:Connect(function(v)
-    pcall(function()
-        if v:IsA"Part" then change(v)
-        elseif v:IsA"MeshPart" then change(v)
-        elseif v:IsA"TrussPart" then change(v)
-        elseif v:IsA"UnionOperation" then change(v)
-        elseif v:IsA"CornerWedgePart" then change(v)
-        elseif v:IsA"WedgePart" then change(v) end
-    end)
-end)
-for i, v in pairs(game:GetDescendants()) do
-    pcall(function()
-        if v:IsA"Part" then change(v)
-        elseif v:IsA"MeshPart" then change(v)
-        elseif v:IsA"TrussPart" then change(v)
-        elseif v:IsA"UnionOperation" then change(v)
-        elseif v:IsA"CornerWedgePart" then change(v)
-        elseif v:IsA"WedgePart" then change(v) end
-    end)
-end
-setfpscap(10000)
-end
-if limit.config[#3] == true then
-    local decalsyeeted = true 
-local g = game
-local w = g.Workspace
-local l = g.Lighting
-local t = w.Terrain
-t.WaterWaveSize = 0
-t.WaterWaveSpeed = 0
-t.WaterReflectance = 0
-t.WaterTransparency = 0
-l.GlobalShadows = false
-l.FogEnd = 9e9
-l.Brightness = 0
-settings().Rendering.QualityLevel = "Level01"
-for i, v in pairs(g:GetDescendants()) do
-    if v:IsA("Part") or v:IsA("Union") or v:IsA("CornerWedgePart") or v:IsA("TrussPart") then
-        v.Material = "Plastic"
-        v.Reflectance = 0
-    elseif v:IsA("Decal") or v:IsA("Texture") and decalsyeeted then
-        v.Transparency = 1
-    elseif v:IsA("ParticleEmitter") or v:IsA("Trail") then
-        v.Lifetime = NumberRange.new(0)
-    elseif v:IsA("Explosion") then
-        v.BlastPressure = 1
-        v.BlastRadius = 1
-    elseif v:IsA("Fire") or v:IsA("SpotLight") or v:IsA("Smoke") then
-        v.Enabled = false
-    elseif v:IsA("MeshPart") then
-        v.Material = "Plastic"
-        v.Reflectance = 0
-        v.TextureID = 10385902758728957
-    end
-end
-for i, e in pairs(l:GetChildren()) do
-    if e:IsA("BlurEffect") or e:IsA("SunRaysEffect") or e:IsA("ColorCorrectionEffect") or e:IsA("BloomEffect") or e:IsA("DepthOfFieldEffect") then
-        e.Enabled = false
-    end
-end
-end
-if limit.config[#4] == true then
-local id = game.PlaceId
-if id == 13772394625 or id == 4777817887 or id == 14915220621 or id == 14732610803 then
-		loadstring(game:HttpGet("https://raw.githubusercontent.com/Hosvile/Refinement/main/Destroy%20Particle%20Emitters",true))()
-		--Blade Ball
-	end
-end
 local HWID=game:GetService("RbxAnalyticsService"):GetClientId()
 local blacklist={"none"}
 for i, v in pairs(blacklist) do
