@@ -8,12 +8,6 @@ for i, v in pairs(blacklist) do
 	plr:Kick("Blacklisted")
   end
 end
-local sconfig = {
-	["LoadingBar"] = true, 
-	["FpsBoost"] = true, 
-	["DestroyParticle"] = true
-	["SuperFpsBoost"] = true
-}
 if sconfig[2] == true then
     if not game:IsLoaded() then repeat wait() until game:IsLoaded() end
 if hookfunction and setreadonly then
