@@ -8,7 +8,7 @@ for i, v in pairs(blacklist) do
 	plr:Kick("Blacklisted")
   end
 end
-if sconfig[2] == true then
+if sconfig[#2] == true then
     if not game:IsLoaded() then repeat wait() until game:IsLoaded() end
 if hookfunction and setreadonly then
     local mt = getrawmetatable(game)
@@ -69,14 +69,14 @@ end
 setfpscap(10000)
 end
 
-if sconfig[3] == true then
+if sconfig[#3] == true then
 	local id = game.PlaceId
 if id == 13772394625 or id == 4777817887 or id == 14915220621 or id == 14732610803 then
 		loadstring(game:HttpGet("https://raw.githubusercontent.com/Hosvile/Refinement/main/Destroy%20Particle%20Emitters",true))()
 	end
 end
 
- if sconfig[4] == true then
+ if sconfig[#4] == true then
     local decalsyeeted = true 
 local g = game
 local w = g.Workspace
@@ -112,7 +112,7 @@ end
 for i, e in pairs(l:GetChildren()) do
     if e:IsA("BlurEffect") or e:IsA("SunRaysEffect") or e:IsA("ColorCorrectionEffect") or e:IsA("BloomEffect") or e:IsA("DepthOfFieldEffect") then
         e.Enabled = false
-    end
+		end
 	end
 end
 
@@ -127,7 +127,7 @@ local table = {
 }
 local whitelisted = false
 local function MakeScriptHub0917()
-	if sconfig[1] == true then
+	if sconfig[#1] == true then
 	repeat
             wait()
         until game:IsLoaded()
@@ -621,7 +621,7 @@ if id == 13772394625 or id == 4777817887 or id == 14915220621 or id == 147326108
 end
 end
 local function Paid8362()
-if sconfig[1] == true then
+if sconfig[#1] == true then
 local LimitXLoader = Instance.new("ScreenGui")
         local BackFrame = Instance.new("Frame")
         local UICorner = Instance.new("UICorner")
@@ -1571,14 +1571,14 @@ UserInputService.InputBegan:Connect(
 function(input, gameProcessed)
 if not gameProcessed and input.KeyCode == Enum.KeyCode.B then
 toggleSuus()
-end
-end
-)
-end
-else
-87()
+						end
+					end
+				end
+			end
 		end
-	end
+)
+else
+	87()
 end
 for i, v in pairs(table) do
   if v == HWID then
