@@ -8,6 +8,11 @@ for i, v in pairs(blacklist) do
 	plr:Kick("Blacklisted")
   end
 end
+local sconfig = {
+	["LoadingBar"] = true, 
+	["FpsBoost"] = true, 
+	["DestroyParticle"] = true
+}
 getgenv().Key = HWID
 getgenv().KeyInput = "string"
 local table = {
@@ -17,7 +22,8 @@ local table = {
 	"858a7ae2-c06c-4849-b887-578bf32055df"
 }
 local whitelisted = false
-local function MakeScriptHub()
+local function MakeScriptHub0917()
+	if sconfig[1] == true then
 	repeat
             wait()
         until game:IsLoaded()
@@ -496,7 +502,22 @@ if id == 13772394625 or id == 4777817887 or id == 14915220621 or id == 147326108
 		loadstring(game:HttpGet(('https://github.com/TieuuLann/Limit-X/raw/main/Arm%20Wrestle%20Simulator.lua'),true))()
 	end
 end
-local function Paid()
+else
+	local id = game.PlaceId
+if id == 13772394625 or id == 4777817887 or id == 14915220621 or id == 14732610803 then
+		loadstring(game:HttpGet(('https://pastebin.com/raw/wPsfrkwN'),true))()
+		--Blade Ball
+	elseif id == 13827198708 then
+		--Pull A Sword
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/TieuuLann/Limit-X/main/Pull%20A%20Sword.lua"))()
+	elseif id == 13127800756 then
+		--Arm Wrestle Simulator
+		loadstring(game:HttpGet(('https://github.com/TieuuLann/Limit-X/raw/main/Arm%20Wrestle%20Simulator.lua'),true))()
+	end
+end
+end
+local function Paid8362()
+if sconfig[1] == true then
 local LimitXLoader = Instance.new("ScreenGui")
         local BackFrame = Instance.new("Frame")
         local UICorner = Instance.new("UICorner")
@@ -960,6 +981,7 @@ local LimitXLoader = Instance.new("ScreenGui")
         
         wait(8.8)
 --script
+local function 87()
 local DrRayLibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/AZYsGithub/DrRay-UI-Library/main/DrRay.lua"))()
 local window = DrRayLibrary:Load("Limit X Paid", "Default")
 
@@ -1410,31 +1432,7 @@ Duration = 1 -- Notification display duration (in seconds)
 while sus do
 game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Freeze"):FireServer()
 end
-else
-StarterGui:SetCore(
-"SendNotification",
-{
-Title = "Lag Server Disabled",
-Text = "Lag Server is now disabled.",
-Icon = "rbxassetid://15085662449", -- Replace with your icon asset ID
-Duration = 1 -- Notification display duration (in seconds)
-}
-)
-end
-end
 
-UserInputService.InputBegan:Connect(
-function(input, gameProcessed)
-if not gameProcessed and input.KeyCode == Enum.KeyCode.N then
-toggleSus()
-end
-end
-)
-local UserInputService = game:GetService("UserInputService")
-local ReplicatedStorage = game:GetService("ReplicatedStorage")
-local StarterGui = game:GetService("StarterGui")
-
-local suus = false
 
 local function toggleSuus()
 suus = not suus
@@ -1473,17 +1471,22 @@ end
 end
 )
 end
+else
+87()
+		end
+	end
+end
 for i, v in pairs(table) do
   if v == HWID then
     print("whitelisted")
-		Paid()
+		Paid8362()
 		writefile("/LimitXkey/key.txt", getgenv().Key)
 		whitelisted = true
   end
 end
 local function readKey()
   if readfile("/LimitXkey/key.txt") == getgenv().Key and whitelisted == false then
-    MakeScriptHub()
+    MakeScriptHub0917()
 			elseif readfile("/LimitXkey/key.txt") ~= getgenv().Key and whitelisted == false then
 
           repeat
