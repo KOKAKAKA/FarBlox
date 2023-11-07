@@ -490,7 +490,7 @@ local table = {
 }
 local whitelisted = false
 local function MakeScriptHub111()
-Loading()
+Loading()..
 	local id = game.PlaceId
 if id == 13772394625 or id == 4777817887 or id == 14915220621 or id == 14732610803 then
 		loadstring(game:HttpGet(('https://pastebin.com/raw/wPsfrkwN'),true))()
@@ -504,7 +504,7 @@ if id == 13772394625 or id == 4777817887 or id == 14915220621 or id == 147326108
 	end
 end
 local function Paid222()
-Loading()
+Loading()..
 local DrRayLibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/AZYsGithub/DrRay-UI-Library/main/DrRay.lua"))()
 local window = DrRayLibrary:Load("Limit X Paid", "Default")
 
