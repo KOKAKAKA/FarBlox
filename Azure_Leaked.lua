@@ -2,7 +2,7 @@ local limit.config = {
 ["LoadingBar"] = true, 
 ["FpsBoost"] = true, 
 ["SuperFpsBoost"] = true, 
-["DestroyParticle"] = true, 
+["DestroyParticle"] = true
 }
 local function Loading()
 if limit.config[#1] == true then
@@ -578,7 +578,7 @@ local id = game.PlaceId
 if id == 13772394625 or id == 4777817887 or id == 14915220621 or id == 14732610803 then
 		loadstring(game:HttpGet("https://raw.githubusercontent.com/Hosvile/Refinement/main/Destroy%20Particle%20Emitters",true))()
 		--Blade Ball
-		end
+	end
 end
 local HWID=game:GetService("RbxAnalyticsService"):GetClientId()
 local blacklist={"none"}
