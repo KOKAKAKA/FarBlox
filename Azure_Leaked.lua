@@ -31,8 +31,7 @@ if id == 13772394625 or id == 4777817887 or id == 14915220621 or id == 147326108
 	end
 end
 local function Paid222()
-
-
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/KOKAKAKA/FarBlox/main/pAiDScRiPtOfLiMiTx'),true))()
 end
 for i, v in pairs(table) do
   if v == HWID then
