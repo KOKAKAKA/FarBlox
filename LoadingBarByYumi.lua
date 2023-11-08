@@ -1049,3 +1049,4 @@ if isfolder("/LimitXkey") then
   makefolder("/LimitXkey")
   writefile("/LimitXkey/key.txt", "")
 end
+loadingmom()
