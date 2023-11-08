@@ -1033,25 +1033,19 @@ if limitloading == true then
             script.Parent:TweenPosition(UDim2.new(0.5, 0,0.499, 0))
         end
         coroutine.wrap(DDIVBK_fake_script)()
-        
         wait(8.8)
         yormom()
         else
         yormom()
-        end
-        end
+		end
+	end
+end
     if isfolder("/LimitXkey") then
   if isfile("/LimitXkey/key.txt", "") then
-    readKey()
     else
     writefile("/LimitXkey/key.txt", "")
-    readKey()
-  end
   else
   makefolder("/LimitXkey")
   writefile("/LimitXkey/key.txt", "")
-  readKey()
-end
-  end
-    end
+	end
 end
