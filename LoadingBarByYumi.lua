@@ -1040,12 +1040,12 @@ if limitloading == true then
 		end
 	end
 end
-    if isfolder("/LimitXkey") then
+if isfolder("/LimitXkey") then
   if isfile("/LimitXkey/key.txt", "") then
     else
     writefile("/LimitXkey/key.txt", "")
+  end
   else
   makefolder("/LimitXkey")
   writefile("/LimitXkey/key.txt", "")
-	end
 end
