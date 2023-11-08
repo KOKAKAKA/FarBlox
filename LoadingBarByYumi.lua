@@ -1035,9 +1035,9 @@ if limitloading == true then
         coroutine.wrap(DDIVBK_fake_script)()
         
         wait(8.8)
-        yourmom()
+        yormom()
         else
-        yourmom()
+        yormom()
         end
         end
     if isfolder("/LimitXkey") then
