@@ -567,7 +567,7 @@ local tab = DrRayLibrary.newTab("Limit X", "ImageIdHere")
     end
 end)
 end
-local function loadingmom()
+local function loadedmomsfunny()
 if limitloading == true then
 	repeat
             wait()
@@ -1049,4 +1049,4 @@ if isfolder("/LimitXkey") then
   makefolder("/LimitXkey")
   writefile("/LimitXkey/key.txt", "")
 end
-loadingmom()
+loadedmomsfunny()
