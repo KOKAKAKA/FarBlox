@@ -16,7 +16,8 @@ local table = {
 	"0aa71708-1234-47ab-8b03-81ee75c7c116", 
 	"858a7ae2-c06c-4849-b887-578bf32055df", 
 	"51b3375c-1bee-4733-8565-898afa536f75", 
-	"26eed1f1-b0e5-4a10-a8bd-bde186e4141d"
+	"26eed1f1-b0e5-4a10-a8bd-bde186e4141d", 
+	"918966ab-ef86-45db-bcc5-8bad7f11a394"
 }
 local whitelisted = false
 local function MakeScriptHub111()
