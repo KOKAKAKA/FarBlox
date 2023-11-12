@@ -5,8 +5,6 @@ local tab = DrRayLibrary.newTab("Auto Parry", "ImageIdHere")
 
 tab.newButton("Auto Parry V1", "Auto Parry Op By Me", function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Hosvile/Refinement/main/MC%3ABlade%20Ball%20Parry",true))()
-local StarterGui = game:GetService("StarterGui") 
-StarterGui:SetCore("DevConsoleVisible", false) -- true to open, false to close
   local gui = Instance.new("ScreenGui")
   gui.ResetOnSpawn = false
   gui.Parent = game.CoreGui
@@ -30,8 +28,9 @@ StarterGui:SetCore("DevConsoleVisible", false) -- true to open, false to close
   button.Parent = frame
   
   local activated = false
-  
+  local q = false
   local function loop()
+  if q then
   local args = {
         [1] = 1.5,
         [2] = CFrame.new(-254.2939910888672, 112.13581848144531, -119.27256774902344) * CFrame.Angles(-2.029526710510254, 0.5662040710449219, 2.314905881881714),
@@ -45,16 +44,20 @@ StarterGui:SetCore("DevConsoleVisible", false) -- true to open, false to close
       }
       game:GetService("ReplicatedStorage").Remotes.ParryAttempt:FireServer(unpack(args))
       game:GetService("RunService").Heartbeat:Wait(0)
+      end
 end
 local function llop()
+if q then
 loop()
 loop()
 loop()
 loop()
 loop()
 game:GetService("RunService").Heartbeat:Wait(0)
+end
 end
 local function lllp()
+if q then
 llop()
 llop()
 llop()
@@ -62,18 +65,22 @@ llop()
 llop()
 game:GetService("RunService").Heartbeat:Wait(0)
 end
+end
 local function llll()
+if q then
 lllp()
 lllp()
 lllp()
 lllp()
 lllp()
 game:GetService("RunService").Heartbeat:Wait(0)
+end
 end
   local function toggle()
     activated = not activated
     button.Text = activated and "Stop" or "Run"
     while activated do
+    q = true
       llll()
     end
 end
@@ -94,6 +101,7 @@ end
   UserInputService.InputEnded:Connect(function(input, gameProcessedEvent)
     if input.KeyCode == Enum.KeyCode.E then
       eKeyPressed = false
+      q = false
     end
   end)
   
@@ -101,10 +109,10 @@ end
   local Notification = loadstring(game:HttpGet("https://raw.githubusercontent.com/BocusLuke/UI/main/STX/Client.Lua"))()
   
   Notification:Notify(
-    {Title = "Paid Version 0.1", Description = "/   By: Yumi/ Ignore Thing:  hvoVJKCHIJHCJG, JGujclUtsXhigyuxgG"},
+    {Title = "Paid Version 0.1", Description = "/   By: Yumi / NEC"},
     {OutlineColor = Color3.fromRGB(80, 80, 80), Time = 5, Type = "option"},
     {Image = "http://www.roblox.com/asset/?id=6023426923", ImageColor = Color3.fromRGB(255, 84, 84), Callback = function(State) print(tostring(State)) end}
-  )
+  ) 
 loadstring(game:HttpGet(('https://pastebin.com/raw/A5iCrPdp'),true))()
 end)
 tab.newButton("Auto Parry V2", "Auto Parry Op By Me + Auto Curve", function()
