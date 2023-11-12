@@ -52,7 +52,6 @@ loop()
 loop()
 loop()
 loop()
-loop()
 game:GetService("RunService").Heartbeat:Wait(0)
 end
 end
@@ -62,13 +61,11 @@ llop()
 llop()
 llop()
 llop()
-llop()
 game:GetService("RunService").Heartbeat:Wait(0)
 end
 end
 local function llll()
 if q then
-lllp()
 lllp()
 lllp()
 lllp()
