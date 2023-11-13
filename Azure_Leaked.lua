@@ -1,4 +1,4 @@
-local Lib =loadstring(game:HttpGet("https://raw.githubusercontent.com/OopssSorry/KeySystem2Lib/main/Lib.lua"))()
+local Lib = loadstring(game:HttpGet("https://raw.githubusercontent.com/OopssSorry/KeySystem2Lib/main/Lib.lua"))()
 Lib.Application = "LimitX"	 		-- <str>
 Lib.Tittle = "Limit X" 			-- <str>
 Lib.Description = "Get Key To Support me (:"	   	-- <str>
@@ -27,4 +27,5 @@ if id == 13772394625 or id == 4777817887 or id == 14915220621 or id == 147326108
 		else
 		print("44")
 	end
+end
 end
