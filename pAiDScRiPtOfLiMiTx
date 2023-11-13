@@ -5,7 +5,9 @@ local tab = DrRayLibrary.newTab("Auto Parry", "ImageIdHere")
 
 tab.newButton("Auto Parry V1", "Auto Parry Op By Me", function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Hosvile/Refinement/main/MC%3ABlade%20Ball%20Parry",true))()
-  local gui = Instance.new("ScreenGui")
+local StarterGui = game:GetService("StarterGui") 
+StarterGui:SetCore("DevConsoleVisible", false) -- true to open, false to close
+local gui = Instance.new("ScreenGui")
   gui.ResetOnSpawn = false
   gui.Parent = game.CoreGui
   
