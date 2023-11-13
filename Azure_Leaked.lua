@@ -1,19 +1,17 @@
-local Lib = loadstring(game:HttpGet("https://raw.githubusercontent.com/OopssSorry/KeySystem2Lib/main/Lib.lua"))()
-Lib.Application = "LimitX"	 		-- <str>
-Lib.Tittle = "Limit X" 			-- <str>
-Lib.Description = "Get Key To Support me (:"	   	-- <str>
-Lib.Logo = nil 						-- <str | none>
-Lib.SaveKey = true					 -- <bool>
-Lib.SecureVersion = true 				-- <bool>
-local Data = Lib:ActiveKeySystem()			-- Activate key system
-local ym = true
-if Data["Premium"] then
-		loadstring(game:HttpGet(('https://raw.githubusercontent.com/KOKAKAKA/FarBlox/main/pAiDScRiPtOfLiMiTx'),true))()
-		ym = not ym
-end
-if Data['Success'] then
-if ym then
-	local id = game.PlaceId
+local KeySystemUI = loadstring(game:HttpGet("https://raw.githubusercontent.com/MaGiXxScripter0/keysystemv2api/master/ui/xrer_mstudio45.lua"))()
+KeySystemUI.New({
+    ApplicationName = "LimitX", -- Your Key System Application Name
+    Name = "LimitX", -- Your Script name
+    Info = "Get Key For LimitX", -- Info text in the GUI, keep empty for default text.
+    DiscordInvite = "https://discord.com/invite/yKGMpfvhSn" -- Optional.
+})
+repeat task.wait() until KeySystemUI.Finished() or KeySystemUI.Closed
+if KeySystemUI:verifyPremiumKey() then
+        print("You are premium")
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/KOKAKAKA/FarBlox/main/PaidLimit"))()
+    if KeySystemUI.Finished() and KeySystemUI.Closed == false then
+    print("Key verified, can load script")
+        	local id = game.PlaceId
 if id == 13772394625 or id == 4777817887 or id == 14915220621 or id == 14732610803 then
 		loadstring(game:HttpGet(('https://pastebin.com/raw/wPsfrkwN'),true))()
 		--Blade Ball
@@ -24,7 +22,7 @@ if id == 13772394625 or id == 4777817887 or id == 14915220621 or id == 147326108
 		--Arm Wrestle Simulator
 		loadstring(game:HttpGet(('https://github.com/TieuuLann/Limit-X/raw/main/Arm%20Wrestle%20Simulator.lua'),true))()
 		end
-		else
-		print("44")
-	end
+    end
+else
+    print("Player closed the GUI.")
 end
