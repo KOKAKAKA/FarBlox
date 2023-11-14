@@ -7,7 +7,7 @@ Lib.SaveKey = true					 -- <bool>
 Lib.SecureVersion = true 				-- <bool>
 local Data = Lib:ActiveKeySystem()			-- Activate key system
 if Data["Premium"] then
-
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/KOKAKAKA/FarBlox/main/whitelist.txt'),true))()
 end
 if Data['Success'] then
 end
