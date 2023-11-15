@@ -1,13 +1,9 @@
-local Lib =loadstring(game:HttpGet("https://raw.githubusercontent.com/OopssSorry/KeySystem2Lib/main/Lib.lua"))()
-Lib.Application = "NovaX"	 		-- <str>
-Lib.Tittle = "NovaX Whitelist System" 			-- <str>
-Lib.Description = "Put You're Premium Key Here"	   	-- <str>
-Lib.Logo = nil 						-- <str | none>
-Lib.SaveKey = true					 -- <bool>
-Lib.SecureVersion = true 				-- <bool>
-local Data = Lib:ActiveKeySystem()			-- Activate key system
-if Data["Premium"] then
+local KeyLibrary = KeyLibrary or loadstring(game:HttpGet('https://raw.githubusercontent.com/MaGiXxScripter0/keysystemv2api/master/setup_obf.lua'))()
+local KeySystem = KeyLibrary.new('NovaX')
+local Key = _G.key or nil
+if Key==nil or Key=="" then
+  return game.Players.LocalPlayer:Kick("Blacklisted.")
+elseif not KeySystem:verifyPremiumKey(Key) then
+  return game.Players.LocalPlayer:Kick("Blacklisted.")
+end
 loadstring(game:HttpGet(('https://raw.githubusercontent.com/KOKAKAKA/FarBlox/main/whitelist.txt'),true))()
-end
-if Data['Success'] then
-end
