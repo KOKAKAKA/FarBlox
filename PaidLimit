@@ -26,6 +26,7 @@ tab.newButton("Auto Spam", "Auto Spam Super Op", function()
 loadstring(game:HttpGet(('https://pastebin.com/raw/A5iCrPdp'),true))()
 end)
 tab.newButton("Spam Button", "Manual Spam Button OP", function()
+local speed = "50"
 local gui = Instance.new("ScreenGui")
   gui.ResetOnSpawn = false
   gui.Parent = game.CoreGui
@@ -98,7 +99,7 @@ tab.newButton("Atomic.", ".", function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Hosvile/Refinement/main/MC%3ABlade%20Ball%20Parry",true))()
 local StarterGui = game:GetService("StarterGui") 
 StarterGui:SetCore("DevConsoleVisible", false) -- true to open, false to close
-local speed = 100000
+local speed = "100000"
   local gui = Instance.new("ScreenGui")
   gui.ResetOnSpawn = false
   gui.Parent = game.CoreGui
@@ -569,10 +570,8 @@ end)
 tab.newButton("100% Win", "Auto Farm Mode", function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/kmmwhocare/Crazzy-Hub/main/Blade%20Ball"))()
 end)
-tab.newButton("Auto Curve (Beta)", "Warning!!! Don't Set Auto Parry Distance Or It Will Break", function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/Hosvile/Refinement/main/MC%3ABlade%20Ball%20Parry%20V2.0.0",true))()
-getgenv().config[1] = 0.4
-
+tab.newInput("Spam Speed", "This Is For Auto Spam And Spam Button", function(sped)
+speed = sped
 end)
 tab.newInput("Distance", "Auto Parry V1 Best Is 0.25-0.75", function(dis)
 getgenv().config[1] = dis
