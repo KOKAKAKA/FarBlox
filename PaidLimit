@@ -369,7 +369,7 @@ local UseRage = false
 local sndsrc = "7148004421"
 local uigrad1 = Hotbar.Block.border1.UIGradient
 local uigrad2 = Hotbar.Ability.border2.UIGradient
-
+return sndsrc
 if character then
     print("Character found.")
 else
