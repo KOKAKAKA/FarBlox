@@ -15,7 +15,6 @@ StarterGui:SetCore("DevConsoleVisible", false) -- true to open, false to close
     {OutlineColor = Color3.fromRGB(80, 80, 80), Time = 5, Type = "option"},
     {Image = "http://www.roblox.com/asset/?id=6023426923", ImageColor = Color3.fromRGB(255, 84, 84), Callback = function(State) print(tostring(State)) end}
   ) 
-local speed = "10"
 end)
 tab.newButton("Auto Parry V2", "Auto Parry Op By Me + Auto Curve", function()
 loadstring(game:HttpGet(('https://raw.githubusercontent.com/Hosvile/Refinement/main/MC%3ABlade%20Ball%20Parry%20V3.0.0'),true))()
