@@ -22,9 +22,31 @@ wait(0.2)
 local StarterGui = game:GetService("StarterGui") 
 StarterGui:SetCore("DevConsoleVisible", false) -- true to open, false to close
 end)
+tab.newButton("Auto Parry V3", "Auto Parry V3 Can Change Distance", function()
+getgenv().config = getgenv().config or {
+	hit_time = 0.5, -- // recommended 0.25 to 0.75 \\ --
+	
+	mode = 'Always', -- // Hold , Toggle , Always \\ --
+	deflect_type = 'Remote', -- // Key Press , Remote \\ --
+	notifications = true,
+	keybind = Enum.KeyCode.V
+}
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Hosvile/Refinement/main/MC%3ABlade%20Ball%20Parry%20V4.0.0",true))()
+wait(0.2)
+local NotificationHolder = loadstring(game:HttpGet("https://raw.githubusercontent.com/BocusLuke/UI/main/STX/Module.Lua"))()
+  local Notification = loadstring(game:HttpGet("https://raw.githubusercontent.com/BocusLuke/UI/main/STX/Client.Lua"))()
+  
+  Notification:Notify(
+    {Title = "Paid Version 0.2", Description = "/   By: Yumi / NEC"},
+    {OutlineColor = Color3.fromRGB(80, 80, 80), Time = 8.5, Type = "option"},
+    {Image = "http://www.roblox.com/asset/?id=6023426923", ImageColor = Color3.fromRGB(255, 84, 84), Callback = function(State) print(tostring(State)) end}
+  ) 
+end)
 tab.newButton("Auto Spam", "Auto Spam Super Op", function()
 loadstring(game:HttpGet(('https://pastebin.com/raw/A5iCrPdp'),true))()
 end)
+
 tab.newButton("Spam Button", "Manual Spam Button OP", function()
 local speed = "50"
 local gui = Instance.new("ScreenGui")
@@ -342,26 +364,7 @@ while true do
     wait()
 end
 end)
-getgenv().config = getgenv().config or {
-	hit_time = 0.5, -- // recommended 0.25 to 0.75 \\ --
-	
-	mode = 'Always', -- // Hold , Toggle , Always \\ --
-	deflect_type = 'Remote', -- // Key Press , Remote \\ --
-	notifications = true,
-	keybind = Enum.KeyCode.V
-}
 
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Hosvile/Refinement/main/MC%3ABlade%20Ball%20Parry%20V4.0.0",true))()
-wait(0.2)
-local NotificationHolder = loadstring(game:HttpGet("https://raw.githubusercontent.com/BocusLuke/UI/main/STX/Module.Lua"))()
-  local Notification = loadstring(game:HttpGet("https://raw.githubusercontent.com/BocusLuke/UI/main/STX/Client.Lua"))()
-  
-  Notification:Notify(
-    {Title = "Paid Version 0.2", Description = "/   By: Yumi / NEC"},
-    {OutlineColor = Color3.fromRGB(80, 80, 80), Time = 8.5, Type = "option"},
-    {Image = "http://www.roblox.com/asset/?id=6023426923", ImageColor = Color3.fromRGB(255, 84, 84), Callback = function(State) print(tostring(State)) end}
-  ) 
-end)
 tab.newButton("Auto Parry Custom Sound (Beta)", "Warning!!! Execute While In Match", function()
 local workspace = game:GetService("Workspace")
 local players = game:GetService("Players")
