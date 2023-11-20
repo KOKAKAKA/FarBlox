@@ -20,7 +20,7 @@ tab.newButton("Auto Parry V2", "Auto Parry Op By Me + Auto Curve", function()
 loadstring(game:HttpGet(('https://raw.githubusercontent.com/Hosvile/Refinement/main/MC%3ABlade%20Ball%20Parry%20V3.0.0'),true))()
 wait(0.2) 
 local StarterGui = game:GetService("StarterGui") 
-StarterGui:SetCore("DevConsoleVisible", false) -- true to open, false to close
+StarterGui:SetCore("DevConsoleVisible", false) -- truo close
 end)
 tab.newButton("Auto Parry V3", "Auto Parry V3 Can Change Distance", function()
 local NotificationHolder = loadstring(game:HttpGet("https://raw.githubusercontent.com/BocusLuke/UI/main/STX/Module.Lua"))()
@@ -31,6 +31,9 @@ local NotificationHolder = loadstring(game:HttpGet("https://raw.githubuserconten
     {Image = "http://www.roblox.com/asset/?id=6023426923", ImageColor = Color3.fromRGB(255, 84, 84), Callback = function(State) print(tostring(State)) end}
   ) 
 wait(0.001)
+local StarterGui = game:GetService("StarterGui") 
+StarterGui:SetCore("DevConsoleVisible", true) -- true to open, false to close
+print("loading.. don't close the console or it might error!!")
 getgenv().config = getgenv().config or {
 	hit_time = 0.5, -- // recommended 0.25 to 0.75 \\ --
 	
@@ -39,8 +42,12 @@ getgenv().config = getgenv().config or {
 	notifications = true,
 	keybind = Enum.KeyCode.V
 }
-
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Hosvile/Refinement/main/MC%3ABlade%20Ball%20Parry%20V4.0.0",true))()
+wait(8)
+print("loading done!")
+wait(1)
+local StarterGui = game:GetService("StarterGui") 
+StarterGui:SetCore("DevConsoleVisible", false) -- true to open, false to close
 end)
 tab.newButton("Auto Spam", "Auto Spam Super Op", function()
 loadstring(game:HttpGet(('https://pastebin.com/raw/A5iCrPdp'),true))()
