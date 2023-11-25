@@ -151,6 +151,7 @@ Balls.ChildAdded:Connect(function(ball)
   ParryCounter = 0
   GetBall(ball)
 end)
+
 end)
 
 tab.newButton("Spam Button", "Manual Spam Button OP", function()
