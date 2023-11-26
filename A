@@ -2,9 +2,9 @@ local KeyLibrary = KeyLibrary or loadstring(game:HttpGet('https://raw.githubuser
 local KeySystem = KeyLibrary.new('VisionHub')
 local Key = _G.key or nil
 if Key==nil or Key=="" then
-  return game.Players.LocalPlayer:Kick("Bro Is Poor And Trying To Get Free Paid 💀")
+  return game.Players.LocalPlayer:Kick("Bro Is Poor And Trying To Get Free Paid")
 elseif not KeySystem:verifyPremiumKey(Key) then
-  return game.Players.LocalPlayer:Kick("Bro Is Poor And Trying To Get Free Paid 💀")
+  return game.Players.LocalPlayer:Kick("Bro Is Poor And Trying To Get Free Paid")
 end
 local function YouPlay()
 local sound = Instance.new("Sound")
