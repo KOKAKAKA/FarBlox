@@ -1,0 +1,952 @@
+local function YouPlay()
+local sound = Instance.new("Sound")
+        sound.SoundId = "rbxassetid://3320590485"
+        sound.Parent = game:GetService("SoundService")
+        sound:Play()
+end
+repeat
+            wait()
+        until game:IsLoaded()
+        
+        local LimitXLoader = Instance.new("ScreenGui")
+        local BackFrame = Instance.new("Frame")
+        local UICorner = Instance.new("UICorner")
+        local TopFrame = Instance.new("Frame")
+        local UICorner_2 = Instance.new("UICorner")
+        local UIGradient = Instance.new("UIGradient")
+        local TextLabel = Instance.new("TextLabel")
+        local UIGradient_2 = Instance.new("UIGradient")
+        local LoadingText = Instance.new("TextLabel")
+        local LoadingFrame = Instance.new("Frame")
+        local UICorner_3 = Instance.new("UICorner")
+        local UIGradient_3 = Instance.new("UIGradient")
+        local Loading = Instance.new("Frame")
+        local UICorner_4 = Instance.new("UICorner")
+        local UIGradient_4 = Instance.new("UIGradient")
+        local UIAspectRatioConstraint = Instance.new("UIAspectRatioConstraint")
+        
+        LimitXLoader.Name = "LimitXLoader"
+        LimitXLoader.Parent = game.CoreGui
+        LimitXLoader.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+        
+        BackFrame.Name = "BackFrame"
+        BackFrame.Parent = LimitXLoader
+        BackFrame.AnchorPoint = Vector2.new(0.5, 0.5)
+        BackFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+        BackFrame.Position = UDim2.new(0.493000001, 0, 1.07000005, 0)
+        BackFrame.Size = UDim2.new(0, 361, 0, 101)
+        
+        UICorner.CornerRadius = UDim.new(0, 12)
+        UICorner.Parent = BackFrame
+        
+        TopFrame.Name = "TopFrame"
+        TopFrame.Parent = BackFrame
+        TopFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+        TopFrame.Size = UDim2.new(0, 361, 0, 29)
+        
+        UICorner_2.CornerRadius = UDim.new(0, 12)
+        UICorner_2.Parent = TopFrame
+        
+        UIGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(0, 0, 0)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(0, 0, 0))}
+        UIGradient.Rotation = 90
+        UIGradient.Parent = TopFrame
+        
+        TextLabel.Parent = TopFrame
+        TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+        TextLabel.BackgroundTransparency = 1.000
+        TextLabel.Position = UDim2.new(0.387811601, 0, -0.0344827585, 0)
+        TextLabel.Size = UDim2.new(0, 87, 0, 29)
+        TextLabel.Font = Enum.Font.Code
+        TextLabel.Text = "LimitX"
+        TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+        TextLabel.TextScaled = true
+        TextLabel.TextSize = 14.000
+        TextLabel.TextWrapped = true
+        
+        UIGradient_2.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(0, 0, 0)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(0, 0, 0))}
+        UIGradient_2.Offset = Vector2.new(0.5, 0)
+        UIGradient_2.Rotation = 90
+        UIGradient_2.Parent = BackFrame
+        
+        LoadingText.Name = "LoadingText"
+        LoadingText.Parent = BackFrame
+        LoadingText.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+        LoadingText.BackgroundTransparency = 1.000
+        LoadingText.Position = UDim2.new(0.0775623247, 0, 0.286810249, 0)
+        LoadingText.Size = UDim2.new(0, 312, 0, 25)
+        LoadingText.Font = Enum.Font.Code
+        LoadingText.Text = "Welcome"
+        LoadingText.TextColor3 = Color3.fromRGB(163, 163, 163)
+        LoadingText.TextScaled = true
+        LoadingText.TextSize = 14.000
+        LoadingText.TextWrapped = true
+        
+        LoadingFrame.Name = "LoadingFrame"
+        LoadingFrame.Parent = BackFrame
+        LoadingFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+        LoadingFrame.Position = UDim2.new(0.0526315793, 0, 0.605504572, 0)
+        LoadingFrame.Size = UDim2.new(0, 321, 0, 26)
+        
+        UICorner_3.CornerRadius = UDim.new(0, 12)
+        UICorner_3.Parent = LoadingFrame
+        
+        UIGradient_3.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(0, 0, 0)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(0, 0, 0))}
+        UIGradient_3.Rotation = 90
+        UIGradient_3.Parent = LoadingFrame
+        
+        Loading.Name = "Loading"
+        Loading.Parent = LoadingFrame
+        Loading.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+        Loading.Position = UDim2.new(0, 0, -0.00988065265, 0)
+        Loading.Size = UDim2.new(0.0280373823, 0, 1.00988066, 0)
+        
+        UICorner_4.CornerRadius = UDim.new(0, 12)
+        UICorner_4.Parent = Loading
+        
+        UIGradient_4.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(200, 200, 200)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(163, 163, 163))}
+        UIGradient_4.Rotation = 90
+        UIGradient_4.Parent = Loading
+        
+        UIAspectRatioConstraint.Parent = BackFrame
+        UIAspectRatioConstraint.AspectRatio = 3.574
+        
+        
+        local function TFOQWM_fake_script()
+            local script = Instance.new('LocalScript', Loading)
+        
+            local LoadingText = script.Parent.Parent
+            local goingDownxd = script.Parent.Parent.Parent.Parent.BackFrame
+                YouPlay()
+        YouPlay()
+        YouPlay()
+        YouPlay()
+        YouPlay()
+        YouPlay()
+        YouPlay()
+        YouPlay()
+        YouPlay()
+        YouPlay()
+        YouPlay()
+        YouPlay()
+        YouPlay()
+        YouPlay()
+        YouPlay()
+        YouPlay()
+            wait(2)
+            script.Parent:TweenSize(UDim2.new(0, 88,0, 26))
+            script.Parent.Parent.Parent.LoadingText.Text = "Checking Premium"
+            print("[1/4] Setting up Script")
+                YouPlay()
+        YouPlay()
+        YouPlay()
+        YouPlay()
+        YouPlay()
+        YouPlay()
+        YouPlay()
+        YouPlay()
+        YouPlay()
+        YouPlay()
+        YouPlay()
+        YouPlay()
+        YouPlay()
+        YouPlay()
+        YouPlay()
+        YouPlay()
+            wait(1)
+        
+        
+            script.Parent:TweenSize(UDim2.new(0, 165,0, 26))
+            script.Parent.Parent.Parent.LoadingText.Text = "Premium Confirmed ✅"
+            print("[2/4] Bypassing Anticheat")
+            YouPlay()
+        YouPlay()
+        YouPlay()
+        YouPlay()
+        YouPlay()
+        YouPlay()
+        YouPlay()
+        YouPlay()
+        YouPlay()
+        YouPlay()
+        YouPlay()
+        YouPlay()
+        YouPlay()
+        YouPlay()
+        YouPlay()
+        YouPlay()
+        
+            wait(1.2)
+            script.Parent:TweenSize(UDim2.new(0, 232,0, 26))
+            script.Parent.Parent.Parent.LoadingText.Text = "Setting Up Ui"
+            print("[3/4] Checking Key")
+            YouPlay()
+        YouPlay()
+        YouPlay()
+        YouPlay()
+        YouPlay()
+        YouPlay()
+        YouPlay()
+        YouPlay()
+        YouPlay()
+        YouPlay()
+        YouPlay()
+        YouPlay()
+        YouPlay()
+        YouPlay()
+        YouPlay()
+        YouPlay()
+         
+            wait(1.5)
+            script.Parent:TweenSize(UDim2.new(1,0,1,0))
+            script.Parent.Parent.Parent.LoadingText.Text = "Loaded, Executing Ui"
+            print("[4/4] Correct Key")
+                YouPlay()
+        YouPlay()
+        YouPlay()
+        YouPlay()
+        YouPlay()
+        YouPlay()
+        YouPlay()
+        YouPlay()
+        YouPlay()
+        YouPlay()
+        YouPlay()
+        YouPlay()
+        YouPlay()
+        YouPlay()
+        YouPlay()
+        YouPlay()
+            wait(2)
+            goingDownxd:TweenPosition(UDim2.new(0.493, 0,1.07, 0))
+            wait(1)
+            script.Parent.Parent.Parent.Parent.Parent.LimitXLoader:Destroy()
+        end
+        coroutine.wrap(TFOQWM_fake_script)()
+        local function DDIVBK_fake_script()
+            local script = Instance.new('LocalScript', BackFrame)
+        
+            script.Parent:TweenPosition(UDim2.new(0.5, 0,0.499, 0))
+        end
+        coroutine.wrap(DDIVBK_fake_script)()
+        
+        wait(8.8)
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/KOKAKAKA/Orion/main/source')))()
+local Window = OrionLib:MakeWindow({Name = "Limit X Paid (Divine) ", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest",  Icon = "rbxassetid://15464739284",  IntroIcon = "rbxassetid://15464739284",  IntroText = "Limit X Divine Paid"})
+local Tab = Window:MakeTab({
+	Name = "Auto Parry",
+	Icon = "rbxassetid://15464739284",
+	PremiumOnly = false
+})
+local Section = Tab:AddSection({
+	Name = "Auto Parry"
+})
+Tab:AddButton({
+	Name = "Auto Parry",
+	Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Hosvile/Refinement/main/MC%3ABlade%20Ball%20Parry",true))()
+local StarterGui = game:GetService("StarterGui") 
+StarterGui:SetCore("DevConsoleVisible", false) -- true to open, false to close
+  local NotificationHolder = loadstring(game:HttpGet("https://raw.githubusercontent.com/BocusLuke/UI/main/STX/Module.Lua"))()
+  local Notification = loadstring(game:HttpGet("https://raw.githubusercontent.com/BocusLuke/UI/main/STX/Client.Lua"))()
+  
+  Notification:Notify(
+    {Title = "Limit X Divine Paid", Description = "/   By Annisa"},
+    {OutlineColor = Color3.fromRGB(80, 80, 80), Time = 5, Type = "option"},
+    {Image = "http://www.roblox.com/asset/?id=6023426923", ImageColor = Color3.fromRGB(255, 84, 84), Callback = function(State) print(tostring(State)) end}
+  ) 
+  	end    
+})
+Tab:AddButton({
+	Name = "Auto Parry V2",
+	Callback = function()
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/Hosvile/Refinement/main/MC%3ABlade%20Ball%20Parry%20V3.0.0'),true))()
+local StarterGui = game:GetService("StarterGui") 
+StarterGui:SetCore("DevConsoleVisible", false) -- true to open, false to close
+  local NotificationHolder = loadstring(game:HttpGet("https://raw.githubusercontent.com/BocusLuke/UI/main/STX/Module.Lua"))()
+  local Notification = loadstring(game:HttpGet("https://raw.githubusercontent.com/BocusLuke/UI/main/STX/Client.Lua"))()
+  
+  Notification:Notify(
+    {Title = "Limit X Divine Paid", Description = "/   By Annisa"},
+    {OutlineColor = Color3.fromRGB(80, 80, 80), Time = 5, Type = "option"},
+    {Image = "http://www.roblox.com/asset/?id=6023426923", ImageColor = Color3.fromRGB(255, 84, 84), Callback = function(State) print(tostring(State)) end}
+  ) 
+  	end    
+})
+Tab:AddButton({
+	Name = "Auto Parry V3",
+	Callback = function()
+local NotificationHolder = loadstring(game:HttpGet("https://raw.githubusercontent.com/BocusLuke/UI/main/STX/Module.Lua"))()
+  local Notification = loadstring(game:HttpGet("https://raw.githubusercontent.com/BocusLuke/UI/main/STX/Client.Lua"))()
+  
+Notification:Notify(
+    {Title = "Limit X Divine Paid", Description = "By Annisa"},
+    {OutlineColor = Color3.fromRGB(80, 80, 80), Time = 9, Type = "option"},
+    {Image = "http://www.roblox.com/asset/?id=6023426923", ImageColor = Color3.fromRGB(255, 84, 84), Callback = function(State) print(tostring(State)) end}
+  )
+getgenv().config = getgenv().config or {
+	hit_time = 0.5, -- // recommended 0.25 to 0.75 \\ --
+	
+	mode = 'Always', -- // Hold , Toggle , Always \\ --
+	deflect_type = 'Remote', -- // Key Press , Remote \\ --
+	notifications = true,
+	keybind = Enum.KeyCode.V
+}
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Hosvile/Refinement/main/MC%3ABlade%20Ball%20Parry%20V4.0.0",true))()
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Auto Farm Mode",
+	Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/kmmwhocare/Crazzy-Hub/main/Blade%20Ball"))()
+  	end    
+})
+Tab:AddButton({
+	Name = "Auto Spam V1",
+	Callback = function()
+      local speed = "30"
+local function get_plr()
+    return game.Players.LocalPlayer
+end
+
+local function get_plrChar()
+    local plrChar = get_plr().Character
+    if plrChar then
+        return plrChar
+    end
+end
+
+local function get_plrRP()
+    local plrRP = get_plrChar():FindFirstChild("HumanoidRootPart")
+    if plrRP then
+        return plrRP
+    end
+end
+
+local function Click_Button()
+    task.spawn(function()
+        local plr = game.Players.LocalPlayer
+        local plrFind = workspace.Alive:FindFirstChild(plr.Name)
+        if plrFind then
+            local plrs = 0
+            for _,v in pairs(workspace:WaitForChild("Alive", 10):GetChildren()) do
+                plrs = plrs + 1
+            end
+            if plrs > 1 then
+                for i = 1, speed do -- Change '5' to the desired number of loops
+                    local args = {[1] = 1.5,[2] = CFrame.new(-254, 112, -119) * CFrame.Angles(-2, 0, 2),[3] = {
+                        ["2617721424"] = Vector3.new(-273, -724, -20),
+                        },[4] = {[1] = 910,[2] = 154}}
+                    game:GetService("ReplicatedStorage").Remotes.ParryAttempt:FireServer(unpack(args))
+                    task.wait()
+                end
+            end
+        end
+    end)
+end
+
+local function get_PlayersNumber()
+    local Alive = workspace:WaitForChild("Alive", 20):GetChildren()
+    local PlayersNumber = 0
+    for _,v in pairs(Alive) do
+        if v and v:FindFirstChild("Humanoid") and v.Humanoid.Health > 50 then
+            PlayersNumber = PlayersNumber + 1
+        end
+    end
+    return PlayersNumber
+end
+
+local function get_ProxyPlayer()
+    local Players = workspace:WaitForChild("Alive"):GetChildren()
+    local Distance = math.huge
+    local plr = game.Players.LocalPlayer
+    local plrRP = plr.Character:FindFirstChild("HumanoidRootPart")
+    local Player = nil
+    
+    for _,plr1 in pairs(Players) do
+        if plr1.Name ~= plr.Name and plrRP and plr1:FindFirstChild("HumanoidRootPart") and plr1:FindFirstChild("Humanoid") and plr1.Humanoid.Health > 50 then
+            local magnitude = (plr1.HumanoidRootPart.Position - plrRP.Position).Magnitude
+            if magnitude <= Distance then
+                Distance = magnitude
+                Player = plr1
+            end
+        end
+    end
+    return Player
+end
+task.spawn(function()
+  while task.wait() do
+    if getgenv().SpamClickA then
+      Click_Button()
+    end
+  end
+end)
+local function DetectSpam()
+  local Balls = workspace:WaitForChild("Balls", 20)
+  
+  local OldPos = Vector3.new()
+  local OldTick1 = tick()
+  
+  local OldBall = Balls
+  local TargetPlayer = ""
+  local SpamNum = 0
+  local BallSpeed = 0
+  local BallDistance = 0
+  
+  task.spawn(function()
+    local OldTick = tick()
+    local OldPos = Vector3.new()
+    while getgenv().DetectSpam do task.wait()
+      local plrRP = get_plrRP()
+      local Ball = Balls:FindFirstChildOfClass("Part")
+      if plrRP and Ball then
+        BallDistance = (plrRP.Position - Ball.Position).Magnitude
+        BallSpeed = (OldPos - Ball.Position).Magnitude
+        if tick() - OldTick >= 1/60 then
+          OldTick = tick()
+          OldPos = Ball.Position
+        end
+      end
+    end
+  end)
+  
+  while getgenv().DetectSpam do task.wait()
+    local Ball = Balls:FindFirstChildOfClass("Part")
+    local plrRP = get_plrRP()
+    local ProxyPlayer = get_ProxyPlayer()
+    
+    if not Ball then
+      getgenv().SpamClickA = false
+    end
+  
+    if Ball and Ball:GetAttribute("realBall") and OldBall ~= Ball then
+    
+      Ball.Changed:Connect(function()task.wait()
+        local Ball = Balls:FindFirstChildOfClass("Part")
+        
+        if Ball then
+          TargetPlayer = Ball:GetAttribute("target")
+          
+          if ProxyPlayer and TargetPlayer == ProxyPlayer.Name or get_plr() and TargetPlayer == get_plr().Name then
+            SpamNum = SpamNum + 1
+          else
+            SpamNum = 0
+          end
+          
+          local args = ProxyPlayer and ProxyPlayer:FindFirstChild("HumanoidRootPart")
+          local HL1 = ProxyPlayer and ProxyPlayer:FindFirstChild("Highlight")
+          local HL2 = get_plrChar() and get_plrChar():FindFirstChild("Highlight")
+          
+          if plrRP and HL1 and args or plrRP and HL2 and args then
+            local DistancePlayer = (ProxyPlayer.HumanoidRootPart.Position - plrRP.Position).Magnitude
+            local DistanceBall = (Ball.Position - plrRP.Position).Magnitude
+            
+            if get_PlayersNumber() < 3 then
+              if DistancePlayer <= 30 and DistanceBall <= 35 and SpamNum >= 2 then
+                getgenv().SpamClickA = true
+              else
+                getgenv().SpamClickA = false
+              end
+            else
+              if DistancePlayer <= 30 and DistanceBall <= 35 and SpamNum >= 3 then
+                getgenv().SpamClickA = true
+              else
+                getgenv().SpamClickA = false
+              end
+            end
+          else
+            getgenv().SpamClickA = false
+          end
+        end
+      end)
+      OldBall = Ball
+    end
+  end
+end
+
+getgenv().DetectSpam = true
+DetectSpam()
+while true do
+    DetectSpam()
+    wait()
+end
+  	end    
+})
+Tab:AddButton({
+	Name = "Auto Spam V2",
+	Callback = function()
+getgenv().AutoDetectSpam = true
+
+--///////////////////////////////////////////////////////////////////--
+
+local Alive = workspace:WaitForChild("Alive", 9e9)
+local Players = game:GetService("Players")
+local Player = Players.LocalPlayer
+
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local Remotes = ReplicatedStorage:WaitForChild("Remotes", 9e9)
+local ParryAttempt = Remotes:WaitForChild("ParryAttempt", 9e9)
+local Balls = workspace:WaitForChild("Balls", 9e9)
+
+--///////////////////////////////////////////////////////////////////--
+
+local function get_ProxyPlayer()
+  local Distance = math.huge
+  local plrRP = Player.Character and Player.Character:FindFirstChild("HumanoidRootPart")
+  local PlayerReturn = nil
+  
+  for _,plr1 in pairs(Alive:GetChildren()) do
+    if plr1:FindFirstChild("Humanoid") and plr1.Humanoid.Health > 50 then
+      if plr1.Name ~= Player.Name and plrRP and plr1:FindFirstChild("HumanoidRootPart") then
+        local magnitude = (plr1.HumanoidRootPart.Position - plrRP.Position).Magnitude
+        if magnitude <= Distance then
+          Distance = magnitude
+          PlayerReturn = plr1
+        end
+      end
+    end
+  end
+  return PlayerReturn
+end
+
+local function SuperClick()
+  task.spawn(function()
+    if IsAlive() and #Alive:GetChildren() > 1 then
+      local args1 = 0.5
+      local args2 = CFrame.new()
+      local args3 = {["enzo"] = Vector3.new()}
+      local args4 = {500, 500}
+      
+      if args1 and args2 and args3 and args4 then
+        ParryAttempt:FireServer(args1, args2, args3, args4)
+      end
+    end
+  end)
+end
+
+task.spawn(function()
+  while task.wait() do
+    if getgenv().SpamClickA and getgenv().AutoDetectSpam then
+      SuperClick()
+    end
+  end
+end)
+
+local ParryCounter = 0
+local DetectSpamDistance = 0
+
+local function GetBall(ball)
+  local Target = ""
+  
+  ball:GetPropertyChangedSignal("Position"):Connect(function()
+    local PlayerPP = Player and Player.Character and Player.Character.PrimaryPart
+    local NearestPlayer = get_ProxyPlayer()
+    
+    if ball and PlayerPP and NearestPlayer and NearestPlayer.PrimaryPart then
+      local PlayerDistance = (PlayerPP.Position - NearestPlayer.PrimaryPart.Position).Magnitude
+      local BallDistance = (PlayerPP.Position - ball.Position).Magnitude
+      
+      DetectSpamDistance = 25 + math.clamp(ParryCounter / 3, 0, 25)
+      
+      if ParryCounter > 2 and PlayerDistance < DetectSpamDistance and BallDistance < 55 then
+        getgenv().SpamClickA = true
+      else
+        getgenv().SpamClickA = false
+      end
+    end
+  end)
+  ball:GetAttributeChangedSignal("target"):Connect(function()
+    Target = ball:GetAttribute("target")
+    local NearestPlayer = get_ProxyPlayer()
+    
+    if NearestPlayer then
+      if Target == NearestPlayer.Name or Target == Player.Name then
+        ParryCounter = ParryCounter + 1
+      else
+        ParryCounter = 0
+      end
+    end
+  end)
+end
+
+for _,ball in pairs(Balls:GetChildren()) do
+  if ball and not ball:GetAttribute("realBall") then
+    return
+  end
+  
+  GetBall(ball)
+end
+
+Balls.ChildAdded:Connect(function(ball)
+  if not getgenv().AutoDetectSpam then
+    return
+  elseif ball and not ball:GetAttribute("realBall") then
+    return
+  end
+  
+  getgenv().SpamClickA = false
+  ParryCounter = 0
+  GetBall(ball)
+end)
+  	end    
+})
+local Tab = Window:MakeTab({
+	Name = "Manual",
+	Icon = "rbxassetid://15464739284",
+	PremiumOnly = false
+})
+local Section = Tab:AddSection({
+	Name = "Manual Spam"
+})
+Tab:AddButton({
+	Name = "Spam Button",
+	Callback = function()
+local speed = "50"
+local gui = Instance.new("ScreenGui")
+  gui.ResetOnSpawn = false
+  gui.Parent = game.CoreGui
+  
+  local frame = Instance.new("Frame")
+  frame.Position = UDim2.new(0, 20, 0, 20)
+  frame.Size = UDim2.new(0, 100, 0, 50)
+  frame.BackgroundColor3 = Color3.new(0, 0, 0)
+  frame.BorderSizePixel = 0
+  frame.Parent = gui
+  local button = Instance.new("TextButton")
+  button.Text = "Run"
+  button.Size = UDim2.new(1, -10, 1, -10)
+  button.Position = UDim2.new(0, 10, 0, 10)
+  button.BackgroundColor3 = Color3.new(1, 1, 1)
+  button.BorderColor3 = Color3.new(0, 0, 0)
+  button.BorderSizePixel = 2
+  button.Font = Enum.Font.SourceSans
+  button.TextColor3 = Color3.new(0, 0, 0)
+  button.TextSize = 16
+  button.Parent = frame
+  
+  local activated = false
+  local q = false
+  local function loop()
+  if q then
+  for i = 1, speed do -- Change '5' to the desired number of loops
+                    local args = {[1] = 1.5,[2] = CFrame.new(-254, 112, -119) * CFrame.Angles(-2, 0, 2),[3] = {
+                        ["2617721424"] = Vector3.new(-273, -724, -20),
+                        },[4] = {[1] = 910,[2] = 154}}
+                    game:GetService("ReplicatedStorage").Remotes.ParryAttempt:FireServer(unpack(args))
+                    task.wait()
+                end
+                end
+                end
+local function toggle()
+    activated = not activated
+    button.Text = activated and "Stop" or "Run"
+    if not activated then
+        q = false -- Set q to false to stop the loop when deactivated
+    else
+        q = true
+        while activated do
+            loop()
+        end
+    end
+end
+  
+  button.MouseButton1Click:Connect(toggle)
+  
+  -- Adicionar keybind "E" para ativar o botão
+  local UserInputService = game:GetService("UserInputService")
+  local eKeyPressed = false
+  
+  UserInputService.InputBegan:Connect(function(input, gameProcessedEvent)
+    if input.KeyCode == Enum.KeyCode.E and not gameProcessedEvent then
+      eKeyPressed = true
+      toggle()
+    end
+  end)
+  
+  UserInputService.InputEnded:Connect(function(input, gameProcessedEvent)
+    if input.KeyCode == Enum.KeyCode.E then
+      eKeyPressed = false
+      q = false
+    end
+  end)
+  	end    
+})
+Tab:AddButton({
+	Name = "Hold Block Spam",
+	Callback = function()
+    getgenv().SpamSpeed = 20
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Hosvile/Refinement/main/MC%3ABlade%20Ball%20Spam",true))()
+  	end    
+})
+local Tab = Window:MakeTab({
+	Name = "Features",
+	Icon = "rbxassetid://15464739284",
+	PremiumOnly = false
+})
+local Section = Tab:AddSection({
+	Name = "Freeze Ball"
+})
+Tab:AddButton({
+	Name = "Keyboard (For Freeze Ball)",
+	Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/advxzivhsjjdhxhsidifvsh/mobkeyboard/main/main.txt", true))()
+  	end    
+})
+Tab:AddButton({
+	Name = "Freeze Ball (B)",
+	Callback = function()
+	local UserInputService = game:GetService("UserInputService")
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local StarterGui = game:GetService("StarterGui")
+
+local suus = false
+
+local function toggleSuus()
+suus = not suus
+if suus then
+StarterGui:SetCore(
+"SendNotification",
+{
+Title = "Freeze Spammer Enabled",
+Text = "The Freeze Spammer is now enabled.",
+Icon = "rbxassetid://15085662449", -- Replace with your icon asset ID
+Duration = 1 -- Notification display duration (in seconds)
+}
+)
+while suus do
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Freeze"):FireServer()
+wait(0.5)
+end
+else
+StarterGui:SetCore(
+"SendNotification",
+{
+Title = "Freeze Spammer Disabled",
+Text = "The Freeze Spammer is now disabled.",
+Icon = "rbxassetid://15085662449", -- Replace with your icon asset ID
+Duration = 1 -- Notification display duration (in seconds)
+}
+)
+end
+end
+
+UserInputService.InputBegan:Connect(
+function(input, gameProcessed)
+if not gameProcessed and input.KeyCode == Enum.KeyCode.B then
+toggleSuus()
+end
+end
+)
+  	end    
+})
+Tab:AddButton({
+	Name = "Lag Server (N) ",
+	Callback = function()
+local UserInputService = game:GetService("UserInputService")
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local StarterGui = game:GetService("StarterGui")
+
+local sus = false
+
+local function toggleSus()
+sus = not sus
+if sus then
+StarterGui:SetCore(
+"SendNotification",
+{
+Title = "Lag Server Enabled",
+Text = "The Lag Server is now enabled.",
+Icon = "rbxassetid://15085662449", -- Replace with your icon asset ID
+Duration = 1 -- Notification display duration (in seconds)
+}
+)
+while sus do
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Freeze"):FireServer()
+end
+else
+StarterGui:SetCore(
+"SendNotification",
+{
+Title = "Lag Server Disabled",
+Text = "Lag Server is now disabled.",
+Icon = "rbxassetid://15085662449", -- Replace with your icon asset ID
+Duration = 1 -- Notification display duration (in seconds)
+}
+)
+end
+end
+
+UserInputService.InputBegan:Connect(
+function(input, gameProcessed)
+if not gameProcessed and input.KeyCode == Enum.KeyCode.N then
+toggleSus()
+end
+end
+)
+  	end    
+})
+local Section = Tab:AddSection({
+	Name = "Function"
+})
+Tab:AddButton({
+	Name = "Target Mechanism",
+	Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Hosvile/Refinement/main/M%3ABlade%20Ball%20Mechanism",true))()
+  	end    
+})
+Tab:AddButton({
+	Name = "Anti Afk",
+	Callback = function()
+    local VirtualUser=game:service'VirtualUser' game:service'Players'.LocalPlayer.Idled:connect(function() VirtualUser:CaptureController() VirtualUser:ClickButton2(Vector2.new()) end)
+
+warn("Anti-Afk has Loaded")
+  	end    
+})
+local Section = Tab:AddSection({
+	Name = "Fps Boost"
+})
+Tab:AddButton({
+	Name = "Destroy Particle",
+	Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Hosvile/Refinement/main/Destroy%20Particle%20Emitters",true))()
+  	end    
+})
+Tab:AddButton({
+	Name = "Fps Boost V1",
+	Callback = function()
+    if not game:IsLoaded() then repeat wait() until game:IsLoaded() end
+if hookfunction and setreadonly then
+    local mt = getrawmetatable(game)
+    local old = mt.__newindex
+    setreadonly(mt, false)
+    local sda
+    sda = hookfunction(old, function(t, k, v)
+        if k == "Material" then
+            if v ~= Enum.Material.Neon and v ~= Enum.Material.Plastic and v ~= Enum.Material.ForceField then v = Enum.Material.Plastic end
+        elseif k == "TopSurface" then v = "Smooth"
+        elseif k == "Reflectance" or k == "WaterWaveSize" or k == "WaterWaveSpeed" or k == "WaterReflectance" then v = 0
+        elseif k == "WaterTransparency" then v = 1
+        elseif k == "GlobalShadows" then v = false end
+        return sda(t, k, v)
+    end)
+    setreadonly(mt, true)
+end
+local g = game
+local w = g.Workspace
+local l = g:GetService"Lighting"
+local t = w:WaitForChild"Terrain"
+t.WaterWaveSize = 0
+t.WaterWaveSpeed = 0
+t.WaterReflectance = 0
+t.WaterTransparency = 1
+l.GlobalShadows = false
+
+function change(v)
+    pcall(function()
+        if v.Material ~= Enum.Material.Neon and v.Material ~= Enum.Material.Plastic and v.Material ~= Enum.Material.ForceField then
+            pcall(function() v.Reflectance = 0 end)
+            pcall(function() v.Material = Enum.Material.Plastic end)
+            pcall(function() v.TopSurface = "Smooth" end)
+        end
+    end)
+end
+
+game.DescendantAdded:Connect(function(v)
+    pcall(function()
+        if v:IsA"Part" then change(v)
+        elseif v:IsA"MeshPart" then change(v)
+        elseif v:IsA"TrussPart" then change(v)
+        elseif v:IsA"UnionOperation" then change(v)
+        elseif v:IsA"CornerWedgePart" then change(v)
+        elseif v:IsA"WedgePart" then change(v) end
+    end)
+end)
+for i, v in pairs(game:GetDescendants()) do
+    pcall(function()
+        if v:IsA"Part" then change(v)
+        elseif v:IsA"MeshPart" then change(v)
+        elseif v:IsA"TrussPart" then change(v)
+        elseif v:IsA"UnionOperation" then change(v)
+        elseif v:IsA"CornerWedgePart" then change(v)
+        elseif v:IsA"WedgePart" then change(v) end
+    end)
+end
+setfpscap(200)
+  	end    
+})
+Tab:AddButton({
+	Name = "Fps Boost V2",
+	Callback = function()
+   local decalsyeeted = true 
+local g = game
+local w = g.Workspace
+local l = g.Lighting
+local t = w.Terrain
+t.WaterWaveSize = 0
+t.WaterWaveSpeed = 0
+t.WaterReflectance = 0
+t.WaterTransparency = 0
+l.GlobalShadows = false
+l.FogEnd = 9e9
+l.Brightness = 0
+settings().Rendering.QualityLevel = "Level01"
+for i, v in pairs(g:GetDescendants()) do
+    if v:IsA("Part") or v:IsA("Union") or v:IsA("CornerWedgePart") or v:IsA("TrussPart") then
+        v.Material = "Plastic"
+        v.Reflectance = 0
+    elseif v:IsA("Decal") or v:IsA("Texture") and decalsyeeted then
+        v.Transparency = 1
+    elseif v:IsA("ParticleEmitter") or v:IsA("Trail") then
+        v.Lifetime = NumberRange.new(0)
+    elseif v:IsA("Explosion") then
+        v.BlastPressure = 1
+        v.BlastRadius = 1
+    elseif v:IsA("Fire") or v:IsA("SpotLight") or v:IsA("Smoke") then
+        v.Enabled = false
+    elseif v:IsA("MeshPart") then
+        v.Material = "Plastic"
+        v.Reflectance = 0
+        v.TextureID = 10385902758728957
+    end
+end
+for i, e in pairs(l:GetChildren()) do
+    if e:IsA("BlurEffect") or e:IsA("SunRaysEffect") or e:IsA("ColorCorrectionEffect") or e:IsA("BloomEffect") or e:IsA("DepthOfFieldEffect") then
+        e.Enabled = false
+    end
+end
+  	end    
+})
+local Tab = Window:MakeTab({
+	Name = "Settings",
+	Icon = "rbxassetid://15464739284",
+	PremiumOnly = false
+})
+local Section = Tab:AddSection({
+	Name = "Settings"
+})
+Tab:AddTextbox({
+	Name = "Auto Parry Range (V3) ", 
+	Default = "",
+	TextDisappear = false,
+	Callback = function(Value)
+     getgenv().config.hit_time = Value
+	end	  
+})
+Tab:AddTextbox({
+	Name = " Spam Speed",
+	Default = "Auto Spam And Spam Speed",
+	TextDisappear = False,
+	Callback = function(Value)
+		speed = Value
+	end	  
+})
+
+OrionLib:MakeNotification({
+	Name = "White Hub V2",
+	Content = "Ribbit ",
+	Image = "rbxassetid://15464739284",
+	Time = 5
+}) 
+OrionLib:Init()
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/TieuuLann/Limit-X/main/Bypass.lua'),true))()
