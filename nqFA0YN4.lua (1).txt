@@ -514,7 +514,7 @@ task.spawn(function()
 	end)
 end)
 
-print("Baka Hub XD LEST GOOOO")
+print("Created By Synthia Dev Or Kia_Ainsleyy")
 
 task.defer(function()
 	game:GetService("RunService").Heartbeat:Connect(function()
