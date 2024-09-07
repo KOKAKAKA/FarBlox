@@ -7,7 +7,8 @@ local Players = game:GetService("Players")
 local RunService = game:GetService("RunService")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local TweenService = game:GetService("TweenService")
-
+local speedFactorPingBased
+local speedFactor
 local Nurysium_Util = loadstring(game:HttpGet("https://raw.githubusercontent.com/flezzpe/Nurysium/main/nurysium_helper.lua"))()
 local function getTrainingBall()
 	for index, ball in workspace:WaitForChild("TrainingBalls"):GetChildren() do
@@ -1012,9 +1013,9 @@ end)
 
 			aura_table.spam_Range = math.clamp(math.max(math.max(ping / 10, 15) + ball_Speed / 7.5, 8.4), 30, 1000)
 
-			local speedFactor = 3.3 - (ping / 100)
+			speedFactor = 3.3 - (ping / 100)
 
-			local speedFactorPingBased = 5.3 - (ping / 100)
+			speedFactorPingBased = 5.3 - (ping / 100)
 
 			aura_table.parry_Range = math.max(math.max(ping, 3.5) + ball_Speed / speedFactor, speedFactorPingBased)
 
@@ -1267,12 +1268,13 @@ Window:AddToggle({
 	
 
 Window:AddSlider({
-	Title = "Parry dist",
+	Title = "Parry Distance",
 	Description = "Edits the Parry dist",
 	Tab = Main,
-	MaxValue = 100,
+	MaxValue = 4,
 	Callback = function(Amount) 
-		warn(Amount);
+	speedFactor = Amount
+	speedFactorPingBased = Amount + 2
 	end,
 }) 
 				
