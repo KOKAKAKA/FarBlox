@@ -25,7 +25,7 @@ print("Modules By Synthia")
 
 local originalParryRemote
 local originalResolveParryRemote 
-
+local aivar, visualizervar, autospamvar, autoparryvar, tphitvar, autowinvar
 local nurysium_Data = nil
 local hit_Sound = nil
 local closest_Entity = nil
@@ -36,12 +36,9 @@ local auto_spam = false
 local training_mode = false
 local anti_curve_spam_Enabled = false
 local visualize_Enabled = false
-local trail_Enabled = false
-local ball_trial_Enabled = false
 local ai_Enabled = false
 local auto_win = false
 local tp_hit = false
-local spectate_Enabled = false
 
 local Services = {game:GetService("AdService"),game:GetService("SocialService")}
 
@@ -540,7 +537,7 @@ local self = Nurysium_Util.getBall()
 	Highlight.OutlineColor = Color3.new(1, 1, 1)
 	
 task.spawn(function()
-	RunService.RenderStepped:Connect(function()
+	visualizervar = RunService.RenderStepped:Connect(function()
 		if visualize_Enabled then
 			Visualize.Transparency = 0
 			Visualize.Material = Enum.Material.ForceField
@@ -556,127 +553,6 @@ task.spawn(function()
 			Visualize1.Material = Enum.Material.ForceField
 			Visualize1.Transparency = 1
 		end	
-	end)
-end)
-
-task.defer(function()
-	game:GetService("RunService").Heartbeat:Connect(function()
-		if not local_player.Character then
-			return
-		end
-		if trail_Enabled then
-			local trail = game:GetObjects("rbxassetid://17483658369")[1]
-			trail.Name = "nurysium_fx"
-			if local_player.Character.PrimaryPart:FindFirstChild("nurysium_fx") then
-				return
-			end
-			local Attachment0 = Instance.new("Attachment", local_player.Character.PrimaryPart)
-			local Attachment1 = Instance.new("Attachment", local_player.Character.PrimaryPart)
-			Attachment0.Position = Vector3.new(0, -2.411, 0)
-			Attachment1.Position = Vector3.new(0, 2.504, 0)
-			trail.Parent = local_player.Character.PrimaryPart
-			trail.Attachment0 = Attachment0
-			trail.Attachment1 = Attachment1
-		else
-			if local_player.Character.PrimaryPart:FindFirstChild("nurysium_fx") then
-				local_player.Character.PrimaryPart["nurysium_fx"]:Destroy()
-			end
-		end
-	end)
-	RunService.RenderStepped:Connect(function()
-		if spectate_Enabled then
-			local self = Nurysium_Util.getBall()
-			if not self then
-				return
-			end
-			workspace.CurrentCamera.CFrame = workspace.CurrentCamera.CFrame:Lerp(CFrame.new(workspace.CurrentCamera.CFrame.Position, self.Position), 1.5)
-		end
-	end)
-	local ball = nil
-
-	-- à¸Ÿà¸±à¸‡à¸à¹Œà¸Šà¸±à¸™à¸ªà¸³à¸«à¸£à¸±à¸šà¸à¸²à¸£à¸ªà¸£à¹‰à¸²à¸‡à¸«à¸£à¸·à¸­à¸­à¸±à¸›à¹€à¸”à¸• Trail
-	local function createOrUpdateTrail()
-		local Trail = ball:FindFirstChild("Trail")
-		if not Trail then
-			Trail = Instance.new("Trail")
-			Trail.Name = "Trail"
-			Trail.FaceCamera = true
-			Trail.Parent = ball
-		end
-
-		local At1 = ball:FindFirstChild("at1")
-		local At2 = ball:FindFirstChild("at2")
-
-		if At1 and At2 then
-			Trail.Attachment0 = At1
-			Trail.Attachment1 = At2
-
-			Trail.Color = ColorSequence.new{
-				ColorSequenceKeypoint.new(0.00, Color3.new(1.00, 0.00, 0.02)),
-				ColorSequenceKeypoint.new(0.14, Color3.new(0.98, 1.00, 0.00)),
-				ColorSequenceKeypoint.new(0.30, Color3.new(0.07, 1.00, 0.00)),
-				ColorSequenceKeypoint.new(0.48, Color3.new(0.00, 0.98, 1.00)),
-				ColorSequenceKeypoint.new(0.69, Color3.new(0.03, 0.00, 1.00)),
-				ColorSequenceKeypoint.new(0.88, Color3.new(1.00, 0.00, 0.98)),
-				ColorSequenceKeypoint.new(1.00, Color3.new(1.00, 0.00, 0.02))
-			}
-
-			Trail.WidthScale = NumberSequence.new{
-				NumberSequenceKeypoint.new(0.00, .5, 0.00),
-				NumberSequenceKeypoint.new(1.00, 0.00, 0.00)
-			}
-
-			Trail.Transparency = NumberSequence.new{
-				NumberSequenceKeypoint.new(0.00, 0.00, 0.00),
-				NumberSequenceKeypoint.new(1.00, 1.00, 0.00)
-			}
-
-			Trail.Enabled = true
-		end
-	end
-
-	-- à¸Ÿà¸±à¸‡à¸à¹Œà¸Šà¸±à¸™à¸ªà¸³à¸«à¸£à¸±à¸šà¸à¸²à¸£à¹€à¸›à¸´à¸” Trail à¹à¸¥à¸°à¸›à¸´à¸” ff
-	local function enableTrailAndDisableFF()
-		local Trail = ball:FindFirstChild("Trail")
-		if not Trail then
-			createOrUpdateTrail()
-			Trail = ball:FindFirstChild("Trail")
-		end
-
-		if Trail then
-			Trail.Enabled = true
-		end
-
-		local ff = ball:FindFirstChild("ff")
-		if ff then
-			ff.Enabled = false
-		end
-	end
-
-	-- à¸Ÿà¸±à¸‡à¸à¹Œà¸Šà¸±à¸™à¸ªà¸³à¸«à¸£à¸±à¸šà¸à¸²à¸£à¸›à¸´à¸” Trail à¹à¸¥à¸°à¹€à¸›à¸´à¸” ff
-	local function disableTrailAndEnableFF()
-		local Trail = ball:FindFirstChild("Trail")
-		if Trail then
-			Trail.Enabled = false
-		end
-
-		local ff = ball:FindFirstChild("ff")
-		if ff then
-			ff.Enabled = true
-		end
-	end
-
-	-- à¹ƒà¸Šà¹‰ RenderStepped à¹€à¸žà¸·à¹ˆà¸­à¸£à¸±à¸šà¸šà¸­à¸¥à¹ƒà¸™à¹à¸•à¹ˆà¸¥à¸°à¹€à¸Ÿà¸£à¸¡
-	RunService.RenderStepped:Connect(function()
-		ball = Nurysium_Util.getBall()
-
-		if ball then
-			if ball_trial_Enabled then
-				enableTrailAndDisableFF()
-			else
-				disableTrailAndEnableFF()
-			end
-		end
 	end)
 end)
 
@@ -740,7 +616,7 @@ task.defer(function()
         return targetPos
     end
 
-    runService.Heartbeat:Connect(function()
+    aivar = runService.Heartbeat:Connect(function()
         if not ai_Enabled or not workspace.Alive:FindFirstChild(local_player.Name) then
             return
         end
@@ -819,7 +695,7 @@ task.defer(function()
 end)
 
 task.defer(function()
-	RunService.Stepped:Connect(function()
+	autowinvar = RunService.Stepped:Connect(function()
 		if auto_win and workspace.Alive:FindFirstChild(local_player.Name) then
 			local self = Nurysium_Util.getBall()
 			if not self then return end
@@ -840,7 +716,7 @@ task.defer(function()
 			player.HumanoidRootPart.CFrame = CFrame.new(target_Position, ball_Position)
 		end
 	end)
-	RunService.Heartbeat:Connect(function()
+	tphitvar = RunService.Heartbeat:Connect(function()
         	local self = Nurysium_Util.getBall()
 	if not self or not tp_hit then return end
 	local player = local_player.Character
@@ -867,7 +743,7 @@ Takentime = tick() - aura_table.hit_Time
 end)
 
 	task.spawn(function()
-		RunService.RenderStepped:Connect(function()
+		autospamvar = RunService.RenderStepped:Connect(function()
 			if not auto_spam or not workspace.Alive:FindFirstChild(local_player.Name) or training_mode then
 				aura_table.hit_Count = 0
 				aura_table.is_Spamming = false
@@ -908,7 +784,7 @@ end)
 			end
 			end)
 
-		RunService.Heartbeat:Connect(function()
+		autoparryvar = RunService.Heartbeat:Connect(function()
 
 			if not aura_Enabled or not (workspace.Alive:FindFirstChild(local_player.Name) or training_mode) then
 				aura_table.hit_Time = tick() * 10
@@ -1109,6 +985,54 @@ end)
 		end)
 
 	end)
+
+-- Define a safe disconnect function to avoid errors
+local function safeDisconnect(connection)
+    if connection and connection.Disconnect then
+        connection:Disconnect()
+    end
+end
+
+-- Function to manage connections
+local function manageConnection(flag, varName, runServiceFunc)
+    if flag then
+        if not _G[varName] then
+            -- Create the RunService connection if the flag is true and connection is not already created
+            _G[varName] = RunService[runServiceFunc]:Connect(function()
+                -- Your code for what the connection does
+            end)
+        end
+    else
+        -- Disconnect and clear the connection if the flag is false
+        safeDisconnect(_G[varName])
+        _G[varName] = nil
+    end
+end
+
+-- Main loop running on Heartbeat
+RunService.Heartbeat:Connect(function()
+    -- Adjust delay as needed
+    wait(0.1)
+
+    -- Manage each connection based on corresponding flags
+    manageConnection(visualize_Enabled, "visualizervar", "Heartbeat")
+    wait(0.1)
+
+    manageConnection(auto_spam, "autospamvar", "RenderStepped")
+    wait(0.1)
+
+    manageConnection(aura_Enabled, "autoparryvar", "Heartbeat")
+    wait(0.1)
+
+    manageConnection(tp_hit, "tphitvar", "Heartbeat")
+    wait(0.1)
+
+    manageConnection(auto_win, "autowinvar", "Heartbeat")
+    wait(0.1)
+
+    manageConnection(ai_Enabled, "aivar", "RenderStepped")
+    wait(0.1)
+end)
 --[[ to prevent mishaps this linebof code of the ui starts here]]--
 				
 
@@ -1423,7 +1347,7 @@ local function checkSpamming()
         elseif not aura_table.is_Spamming then
             notificationShown = false  -- Reset the flag when not spamming
         end
-        wait()  -- Wait for 1 second before checking again (adjust as needed)
+        wait(0.5)  -- Wait for 1 second before checking again (adjust as needed)
     end
 end
 
