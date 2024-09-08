@@ -1408,7 +1408,27 @@ Window:Notify({
 	Description = "Press Left Alt or The Image To Minimize The Window.", 
 	Duration = 10
 })
+local notificationShown = false  -- Flag to track if the notification has been shown
 
+-- Function to repeatedly check if aura_table.is_Spamming
+local function checkSpamming()
+    while true do  -- Infinite loop to keep checking
+        if aura_table.is_Spamming and not notificationShown then
+            Window:Notify({
+                Title = "Spamming",
+                Description = "", 
+                Duration = 2
+            })
+            notificationShown = true  -- Set the flag to true after showing the notification
+        elseif not aura_table.is_Spamming then
+            notificationShown = false  -- Reset the flag when not spamming
+        end
+        wait()  -- Wait for 1 second before checking again (adjust as needed)
+    end
+end
+
+-- Start the check in a new thread
+spawn(checkSpamming)
 local ScreenGui = Instance.new("ScreenGui")
 local ImageButton = Instance.new("ImageButton")
 local UICorner = Instance.new("UICorner")
