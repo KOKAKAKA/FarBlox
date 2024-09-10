@@ -1328,7 +1328,7 @@ Window:AddSlider({
 }) 
 
 Window:Notify({
-	Title = "Hello World!",
+	Title = "Join Our Now Discord Server: https://dsc.gg/fadehub",
 	Description = "Press Left Alt or The Image To Minimize The Window.", 
 	Duration = 10
 })
