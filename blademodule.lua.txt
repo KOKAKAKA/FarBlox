@@ -17,7 +17,7 @@ local function getTrainingBall()
 		end
 	end
 end
-
+local ismyautoparryspamming
 local local_player = Players.LocalPlayer
 local camera = workspace.CurrentCamera
 
@@ -29,7 +29,6 @@ local aivar, visualizervar, autospamvar, autoparryvar, tphitvar, autowinvar
 local nurysium_Data = nil
 local hit_Sound = nil
 local closest_Entity = nil
-local potanum = 20
 local aura_Enabled = false
 local auto_curve = false
 local auto_spam = false
@@ -743,46 +742,58 @@ Takentime = tick() - aura_table.hit_Time
 end)
 
 	task.spawn(function()
-		autospamvar = RunService.RenderStepped:Connect(function()
-			if not auto_spam or not workspace.Alive:FindFirstChild(local_player.Name) or training_mode then
-				aura_table.hit_Count = 0
-				aura_table.is_Spamming = false
-				aura_table.last_target = nil
-				return
-			end		
-			if closest_Entity then
-				if workspace.Alive:FindFirstChild(closest_Entity.Name) then
-					if aura_table.is_Spamming and aura_table.hit_Count >= 1 then
-						if (local_player.Character.PrimaryPart.Position - closest_Entity.HumanoidRootPart.Position).Magnitude <= aura_table.spam_Range and workspace.Alive:FindFirstChild(local_player.Name) then
-							task.spawn(function()
-								for count = 1,potanum do
-									if auto_curve then
-										originalParryRemote:FireServer(
-											0,
-											CFrame.new(camera.CFrame.Position, Vector3.new(math.random(-1000, 1000), math.random(0, 1000), math.random(100, 1000))),
-											{[closest_Entity_To_mouse.Name] = closest_Entity_To_mouse.HumanoidRootPart.Position},
-											{closest_Entity_To_mouse.HumanoidRootPart.Position.X, closest_Entity_To_mouse.HumanoidRootPart.Position.Y},
-											false
-										)
-									else
-										local cf = camera.CFrame
-										local x, y, z, R00, R01, R02, R10, R11, R12, R20, R21, R22 = cf:GetComponents()
-								
-										originalParryRemote:FireServer(
-											0,
-											CFrame.new(x, y, z, R00, R01, R02, R10, R11, R12, R20, R21, R22),
-											{[closest_Entity_To_mouse.Name] = closest_Entity_To_mouse.HumanoidRootPart.Position},
-											{closest_Entity_To_mouse.HumanoidRootPart.Position.X, closest_Entity_To_mouse.HumanoidRootPart.Position.Y},
-											false
-										)
-									end
-								end
-							end)
-						end
-					end
-				end
-			end
-			end)
+    autospamvar = RunService.RenderStepped:Connect(function()
+        -- Reset spam state if conditions are not met
+        if not auto_spam or not workspace.Alive:FindFirstChild(local_player.Name) or training_mode then
+            aura_table.hit_Count = 0
+            aura_table.is_Spamming = false
+            aura_table.last_target = nil
+            ismyautoparryspamming = false  -- Ensure accurate reset
+            aura_table.spam_Range = 0
+            return
+        end
+        
+        -- Proceed if a closest entity is found
+        if closest_Entity and workspace.Alive:FindFirstChild(closest_Entity.Name) then
+            if aura_table.is_Spamming and aura_table.hit_Count >= 1 then
+                -- Check distance before executing spam actions
+                if (local_player.Character.PrimaryPart.Position - closest_Entity.HumanoidRootPart.Position).Magnitude <= aura_table.spam_Range then
+                    ismyautoparryspamming = true  -- Set to true when spamming actions start
+                    
+                    -- Perform the spamming action
+                    task.spawn(function()
+                            if auto_curve then
+                                originalParryRemote:FireServer(
+                                    0,
+                                    CFrame.new(camera.CFrame.Position, Vector3.new(math.random(-1000, 1000), math.random(0, 1000), math.random(100, 1000))),
+                                    {[closest_Entity_To_mouse.Name] = closest_Entity_To_mouse.HumanoidRootPart.Position},
+                                    {closest_Entity_To_mouse.HumanoidRootPart.Position.X, closest_Entity_To_mouse.HumanoidRootPart.Position.Y},
+                                    false
+                                )
+                            else
+                                local cf = camera.CFrame
+                                originalParryRemote:FireServer(
+                                    0,
+                                    cf,
+                                    {[closest_Entity_To_mouse.Name] = closest_Entity_To_mouse.HumanoidRootPart.Position},
+                                    {closest_Entity_To_mouse.HumanoidRootPart.Position.X, closest_Entity_To_mouse.HumanoidRootPart.Position.Y},
+                                    false
+                                )
+                        end
+                    end)
+                else
+                    -- Reset spamming state if out of range
+                    ismyautoparryspamming = false
+                end
+            else
+                -- Reset spamming state if not spamming
+                ismyautoparryspamming = false
+            end
+        else
+            -- Reset spamming state if no valid entity found
+            ismyautoparryspamming = false
+        end
+    end)
 
 		autoparryvar = RunService.Heartbeat:Connect(function()
 
@@ -887,11 +898,11 @@ end)
 
 			local target_Dot = target_isMoving and math.max(target_Direction:Dot(target_Velocity.Unit), 0)
 
-			aura_table.spam_Range = math.clamp(math.max(math.max(ping / 10, 15) + ball_Speed / 7.5, 8.4), 30, 1000)
+			aura_table.spam_Range = math.clamp(math.max(math.max(ping / 10, 15) + ball_Speed / 7.5, 8.4), 27, 800)
 
-			speedFactor = 3.3 - (ping / 100)
+			speedFactor = 3.27 - (ping / 100)
 
-			speedFactorPingBased = 5.3 - (ping / 100)
+			speedFactorPingBased = 5.2 - (ping / 100)
 
 			aura_table.parry_Range = math.max(math.max(ping, 3.5) + ball_Speed / speedFactor, speedFactorPingBased)
 
@@ -1188,30 +1199,6 @@ Window:AddToggle({
 	end,
 }) 				
 
-		Window:AddSection({ Name = "Parry Edits", Tab = Main }) 
-	
-
-Window:AddSlider({
-	Title = "Parry Distance",
-	Description = "Edits the Parry dist",
-	Tab = Main,
-	MaxValue = 4,
-	Callback = function(Amount) 
-	speedFactor = Amount
-	speedFactorPingBased = Amount + 2
-	end,
-}) 
-				
-Window:AddSlider({
-	Title = "Spam speed",
-	Description = "Edits the speed",
-	Tab = Main,
-	MaxValue = 100,
-	Callback = function(Value) 
-		potanum = Value
-	end,
-}) 				
-
 Window:AddSection({ Name = "Parry Misc", Tab = Main }) 
 	
 		Window:AddToggle({
@@ -1328,7 +1315,7 @@ Window:AddSlider({
 }) 
 
 Window:Notify({
-	Title = "Join Our Now Discord Server: https://dsc.gg/fadehub",
+	Title = "Please Join Fade New Server: https://dsc.gg/fadehub",
 	Description = "Press Left Alt or The Image To Minimize The Window.", 
 	Duration = 10
 })
@@ -1337,7 +1324,7 @@ local notificationShown = false  -- Flag to track if the notification has been s
 -- Function to repeatedly check if aura_table.is_Spamming
 local function checkSpamming()
     while true do  -- Infinite loop to keep checking
-        if aura_table.is_Spamming and not notificationShown then
+        if ismyautoparryspamming and not notificationShown then
             Window:Notify({
                 Title = "Spamming",
                 Description = "", 
@@ -1347,7 +1334,7 @@ local function checkSpamming()
         elseif not aura_table.is_Spamming then
             notificationShown = false  -- Reset the flag when not spamming
         end
-        wait(0.5)  -- Wait for 1 second before checking again (adjust as needed)
+        wait(0.1)  -- Wait for 1 second before checking again (adjust as needed)
     end
 end
 
